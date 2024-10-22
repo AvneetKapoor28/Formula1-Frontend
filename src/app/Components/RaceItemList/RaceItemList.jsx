@@ -38,7 +38,7 @@ const RaceItemList = () => {
   } else {
     return (
       <div className="races-container">
-        <div className="standings-heading">Races</div>
+        <div className="main-heading">Races</div>
         <div className="race-items-container">
           {raceList.length > 0 ? (
             (console.log(raceList),

@@ -5,7 +5,6 @@
     box-sizing: border-box;
     max-height: 600px;
     overflow-y: auto;
-    scrollbar-width: thin;
     margin: 0;
 }
 
@@ -69,35 +68,7 @@
     right: 1.6em;
 }
 
-/* Smooth, aesthetically pleasing scrollbar */
-.standings-container::-webkit-scrollbar {
-    width: 8px;
-    background-color: #1e1e1e;
-    /* Dark background for scrollbar track */
-}
 
-.standings-container::-webkit-scrollbar-thumb {
-    background-color: #555;
-    border-radius: 10px;
-    background-clip: padding-box;
-    border: 2px solid #1e1e1e;
-    /* Creates space around the thumb */
-}
-
-.standings-container::-webkit-scrollbar-thumb:hover {
-    background-color: #777;
-    /* Lighter on hover for better visual feedback */
-}
-
-.standings-container::-webkit-scrollbar-track {
-    background-color: #1e1e1e;
-}
-
-/* Firefox scrollbar customization */
-.standings-container {
-    scrollbar-color: #555 #121212;
-    scrollbar-width: thin;
-}
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {

@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState, useContext } from "react";
+import styles from "../CountWidgetStyles.module.css";
 import axios from "axios";
-import "./ConstructorCount.css";
-import { PastSeasonsPageContext } from "../../Context/PastSeasonsPageProvider";
+import { PastSeasonsPageContext } from "../../../Context/PastSeasonsPageProvider";
 
 const ConstructorCount = () => {
   const [constructorCount, setConstructorCount] = useState(null);
@@ -26,12 +26,12 @@ const ConstructorCount = () => {
       });
   }, [selectedYear]);
   return (
-    <div className="widget">
-      <h3 className="widget-title">Constructor Count</h3>
+    <div className={styles.widget}>
+      <h3 className={styles.widgetTitle}>Constructor Count</h3>
       {loading ? (
-        <p className="loading-text">Loading...</p>
+        <p className={styles.loadingText}>Loading...</p>
       ) : (
-        <div className="count constructor-count">
+        <div className={styles.count}>
           {constructorCount || "No data available"}
         </div>
       )}

@@ -1,11 +1,15 @@
-import { Poppins } from 'next/font/google';
+import { Poppins, Noto_Sans } from 'next/font/google';
 import "./globals.css";
 import "./Components/Navbar/Navbar"
 import Navbar from "./Components/Navbar/Navbar";
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['400', '500'], // Add different weights you need
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], // Add different weights you need
+});
+const notoSans = Noto_Sans({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], // Include the weights you need for Noto Sans
 });
 
 export const metadata = {
@@ -17,8 +21,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
-        <Navbar/>
+      <body className={`${poppins.className} ${notoSans.className}`}>
+        <Navbar />
         {children}
       </body>
     </html>

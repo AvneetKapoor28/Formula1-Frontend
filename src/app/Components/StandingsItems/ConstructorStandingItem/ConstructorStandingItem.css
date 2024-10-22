@@ -11,9 +11,8 @@
     display: grid;
     grid-template-columns: 0.4fr 1fr 1fr 1fr;
     align-items: center;
-    background-color: #1e1e1e;
+    background-color: var(--widget-background-color);
     padding: 1em;
-    /* margin: 0.5em 0; */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -38,7 +37,7 @@
 .constructor-name {
     font-size: 1rem;
     font-weight: 600;
-    color: #ffab40;
+    color: var(--widget-title-color);
     padding-left: 2rem;
 }
 

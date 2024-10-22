@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import React from "react";
 import "./Navbar.css";
-import Image from 'next/image';
+import Image from "next/image";
 import logo from "../../../Assets/Logo.svg";
 import { useState } from "react";
-import Link from 'next/link'
+import Link from "next/link";
 
 const Navbar = () => {
   const [navSelection, setNavSelection] = useState("HomePage");

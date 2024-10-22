@@ -1,0 +1,88 @@
+/* Common to DriverStandingsItem and ConstructorStandingsItem */
+.standingsItemContainer {
+    /* width: 80%; */
+    /* max-width: 1200px; */
+    padding: 0.3em;
+    box-sizing: border-box;
+}
+
+/* Subtle hover effect */
+.standingsItem:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for position */
+.position {
+    font-size: 1.2rem;
+    color: #ff6f61;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Styling for name */
+.name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--widget-title-color);
+    padding-left: 2rem;
+}
+
+/* Styling for points */
+.points {
+    font-size: 1.2rem;
+    color: #2196f3;
+    text-align: center;
+}
+
+/* Styling for wins */
+.wins {
+    font-size: 1.2rem;
+    color: #9c27b0;
+    text-align: center;
+}
+
+
+/* Specific to DriverStandingsItem */
+.driverStandingsItem {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 1.5fr 0.8fr 0.8fr 0.8fr;
+    align-items: center;
+    background-color: var(--widget-background-color);
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+/* Styling for driver number */
+.driverNumber {
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Styling for constructor name */
+.constructorName {
+    font-weight: 500;
+}
+
+
+/* Specific to ConstructorStandingsItem */
+.constructorStandingsItem {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 1fr 1fr;
+    align-items: center;
+    background-color: var(--widget-background-color);
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.centerAlign {
+    text-align: center;
+}

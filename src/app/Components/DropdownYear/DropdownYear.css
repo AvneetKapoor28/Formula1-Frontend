@@ -75,9 +75,3 @@
         transform: translateY(0);
     }
 }
-
-/* Scrollbar styling for the dropdownYear list */
-.dropdownYear-list {
-    scrollbar-color: #555 #1e1e1e;
-    scrollbar-width: thin;
-}

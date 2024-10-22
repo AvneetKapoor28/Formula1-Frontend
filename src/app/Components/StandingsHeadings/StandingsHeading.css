@@ -1,86 +1,83 @@
 .races-container{
-    padding: 1rem;
+    padding: var(--page-div-block-padding);
 }
 
-.standings-heading {
-    font-size: 3rem;
-    padding: 0.5em 0em 0em 0.5em;
-    font-weight: 600;
-    
-}
 
 .driversOrConstructors {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    /* Space between Drivers and Constructors */
-    font-family: "Poppins", system-ui;
+    font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-style: normal;
-    /* margin: 5px 0; */
+    font-size: 1.3em;
 }
 
 .driversOrConstructors h3 {
     cursor: pointer;
     position: relative;
     color: inherit;
-    /* Default color */
-    transition: color 0.3s ease, transform 0.3s ease, font-weight 0.3s ease;
-    font-weight: normal;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .driversOrConstructors h3:hover {
-    color: #ff7e5f;
-    /* color: greenyellow; */
-    /* Hover color */
-    transform: scale(1.1);
-    font-family: 'Poppins', sans-serif;
-    /* Ensure the font stays the same */
-    font-weight: 500;
-    /* Poppins Medium */
-    /* Slightly enlarge on hover */
+    color: var(--foreground); 
+    transform: scale(1.05);
 }
 
 .driversOrConstructors span {
     color: rgb(207, 201, 201);
-    /* Separator line color */
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-family: 'Courier New', Courier, monospace;
-    /* Size of the separator */
 }
 
-/* Selected styles with animation */
+/* Selected styles */
 .driversOrConstructors .selected {
-    color: #ff7e5f;
-    /* Highlighted color */
-    /* font-weight: bold; */
-    transform: scale(1.1);
-    font-family: 'Poppins', sans-serif;
+    color: var(--selected-heading-color); /* Highlighted color */
+    transform: scale(1.05);
     font-weight: 500;
+    position: relative;
 }
 
 .driversOrConstructors .selected::after {
     content: "";
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 50%;
     bottom: -5px;
     height: 3px;
-    background-color: #ff7e5f;
-    /* Underline for the selected item */
-    animation: underlineSlide 0.4s ease forwards;
+    background-color: var(--selected-heading-color);
+    width: 100%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: underlineSlide 0.3s ease forwards;
 }
 
-/* Underline animation */
 @keyframes underlineSlide {
     0% {
         width: 0;
-        left: 50%;
+        opacity: 0;
     }
-
     100% {
         width: 100%;
-        left: 0;
+        opacity: 1;
     }
 }
+
+/* Hover underline for all items */
+.driversOrConstructors h3::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    height: 2px;
+    width: 0;
+    background-color: var(--foreground);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.driversOrConstructors h3:hover::before {
+    width: 100%;
+    left: 0;
+}
+

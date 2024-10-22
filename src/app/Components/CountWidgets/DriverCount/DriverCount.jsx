@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useContext, useEffect } from "react";
-import "./DriverCount.css";
-import { PastSeasonsPageContext } from "../../Context/PastSeasonsPageProvider";
+import styles from "../CountWidgetStyles.module.css";
+import { PastSeasonsPageContext } from "../../../Context/PastSeasonsPageProvider";
 import axios from "axios";
 
 const DriverCount = () => {
@@ -27,12 +27,12 @@ const DriverCount = () => {
   }, [selectedYear]);
 
   return (
-    <div className="widget">
-      <h3 className="widget-title">Driver Count</h3>
+    <div className={styles.widget}>
+      <h3 className={styles.widgetTitle}>Driver Count</h3>
       {loading ? (
-        <p className="loading-text">Loading...</p>
+        <p className={styles.loadingText}>Loading...</p>
       ) : (
-        <div className="count driver-count">
+        <div className={styles.count}>
           {driverCount || "No data available"}
         </div>
       )}

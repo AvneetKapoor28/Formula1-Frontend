@@ -3,7 +3,7 @@ import "./ConstructorStandingTable.css";
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { PastSeasonsPageContext } from "../../Context/PastSeasonsPageProvider";
-import ConstructorStandingItem from "../ConstructorStandingItem/ConstructorStandingItem";
+import ConstructorStandingItem from "../StandingsItems/ConstructorStandingItem/ConstructorStandingItem";
 import loading_animation from "../../../Assets/loading_animation.webm";
 
 const ConstructorStandingTable = () => {

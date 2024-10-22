@@ -1,17 +1,12 @@
 /* Container for the table of standings */
-.standings-item-container {
-    /* width: 80%; */
-    /* max-width: 1200px; */
-    padding: 0.3em;
-    box-sizing: border-box;
-}
+
 
 /* Container for each driver standing item */
 .driver-standing-item {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr 1.5fr 0.8fr 0.8fr 0.8fr;
     align-items: center;
-    background-color: #1e1e1e;
+    background-color: var(--widget-background-color);
     padding: 1em;
     /* margin: 0.5em 0; */
     border-radius: 8px;
@@ -21,7 +16,7 @@
 }
 
 /* Subtle hover effect */
-.driver-standing-item:hover {
+.driver-standing-item:hover {      /* Change class to standing-item */
     transform: scale(1.02);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
@@ -45,7 +40,7 @@
 .driver-name {
     font-size: 1rem;
     font-weight: 600;
-    color: #ffab40;
+    color: var(--widget-title-color);
     padding-left: 2rem;
 }
 
@@ -79,7 +74,7 @@
         align-items: start;
     }
 
-    .driver-standing-item > div {
+    .driver-standing-item>div {
         margin-bottom: 0.5em;
     }
 }

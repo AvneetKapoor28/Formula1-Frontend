@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { PastSeasonsPageContext } from "../../Context/PastSeasonsPageProvider";
-import DriverStandingItem from "../DriverStandingItem/DriverStandingItem";
+import DriverStandingItem from "../StandingsItems/DriverStandingItem/DriverStandingItem";
 import "./DriverStandingTable.css";
 import loading_animation from "../../../Assets/loading_animation.webm";
 

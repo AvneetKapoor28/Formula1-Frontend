@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState, useContext } from "react";
+import styles from  "../CountWidgetStyles.module.css";
 import axios from "axios";
-import "./SeasonRaceCount.css";
-import { PastSeasonsPageContext } from "../../Context/PastSeasonsPageProvider";
+import { PastSeasonsPageContext } from "../../../Context/PastSeasonsPageProvider";
 
 const SeasonRaceCount = () => {
   const [raceCount, setRaceCount] = useState(null);
@@ -26,12 +26,12 @@ const SeasonRaceCount = () => {
       });
   }, [selectedYear]);
   return (
-    <div className="widget">
-      <h3 className="widget-title">Race Count</h3>
+    <div className={styles.widget}>
+      <h3 className={styles.widgetTitle}>Race Count</h3>
       {loading ? (
-        <p className="loading-text">Loading...</p>
+        <p className={styles.loadingText}>Loading...</p>
       ) : (
-        <div className="count race-count">
+        <div className={styles.count}>
           {raceCount || "No data available"}
         </div>
       )}

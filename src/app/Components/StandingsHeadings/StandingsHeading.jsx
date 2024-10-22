@@ -8,9 +8,9 @@ const Standings = () => {
   const { standings, setStandings } = useContext(PastSeasonsPageContext);
   return (
     <div>
-      <span className="standings-heading-span">
-        <h2 className="standings-heading">Standings</h2>
-      </span>
+
+        <h2 className="main-heading">Standings</h2>
+      
       <div className="driversOrConstructors">
         <h3
           onClick={() => {
