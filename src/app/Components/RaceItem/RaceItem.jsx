@@ -1,5 +1,7 @@
 import React from "react";
 import "./RaceItem.css";
+import {noto_sans} from "../../fonts";
+
 
 const RaceItem = (props) => {
     const options = { day: 'numeric', month: 'short' };
@@ -7,7 +9,7 @@ const RaceItem = (props) => {
     const formattedDate =date.toLocaleDateString('en-US', options).replace(',', '-');
 
   return (
-    <div className="raceitem">
+    <div className={`raceitem ${noto_sans.className}`}>
       <div className="date-roundnumber">
         <div className="date-range">{formattedDate}</div>
         <div className="round-number">{props.Round}</div>

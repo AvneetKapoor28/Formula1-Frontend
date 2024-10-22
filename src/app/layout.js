@@ -1,16 +1,7 @@
-import { Poppins, Noto_Sans } from 'next/font/google';
+import { poppins } from "./fonts";
 import "./globals.css";
 import "./Components/Navbar/Navbar"
 import Navbar from "./Components/Navbar/Navbar";
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], // Add different weights you need
-});
-const notoSans = Noto_Sans({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], // Include the weights you need for Noto Sans
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -21,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} ${notoSans.className}`}>
+      <body className={`${poppins.className}`}>
         <Navbar />
         {children}
       </body>

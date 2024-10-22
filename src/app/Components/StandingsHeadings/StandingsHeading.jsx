@@ -1,9 +1,13 @@
 'use client'
+
 import React, { useContext } from "react";
 import "./StandingsHeading.css";
 import DriverStandingTable from "../DriverStandingTable/DriverStandingTable";
 import { PastSeasonsPageContext } from "../../Context/PastSeasonsPageProvider";
 import ConstructorStandingTable from "../ConstructorStandingTable/ConstructorStandingTable";
+
+
+
 const Standings = () => {
   const { standings, setStandings } = useContext(PastSeasonsPageContext);
   return (
@@ -11,7 +15,7 @@ const Standings = () => {
 
         <h2 className="main-heading">Standings</h2>
       
-      <div className="driversOrConstructors">
+      <div className={"driversOrConstructors"}>
         <h3
           onClick={() => {
             setStandings("Drivers");
