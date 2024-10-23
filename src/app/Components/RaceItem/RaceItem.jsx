@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./RaceItem.css";
-import {noto_sans} from "../../fonts";
-
+import { noto_sans } from "../../fonts";
+import { PastSeasonsPageContext } from "@/app/Context/PastSeasonsPageProvider";
 
 const RaceItem = (props) => {
-    const options = { day: 'numeric', month: 'short' };
-    const date = new Date(props.Date);
-    const formattedDate =date.toLocaleDateString('en-US', options).replace(',', '-');
+  const { selectedRound, setSelectedRound } = useContext(
+    PastSeasonsPageContext
+  );
+
+  const options = { day: "numeric", month: "short" };
+  const date = new Date(props.Date);
+  const formattedDate = date
+    .toLocaleDateString("en-US", options)
+    .replace(",", "-");
+
+  useEffect(() => {
+    console.log(selectedRound + " selectedRound updated");
+  }, [selectedRound]); 
 
   return (
-    <div className={`raceitem ${noto_sans.className}`}>
+    <div
+      className={`raceitem ${noto_sans.className}`}
+      onClick={() => {
+        setSelectedRound(props.Round);
+        props.setIsPopupOpen(true);
+      }}
+    >
       <div className="date-roundnumber">
         <div className="date-range">{formattedDate}</div>
         <div className="round-number">{props.Round}</div>

@@ -6,7 +6,7 @@ import loading_animation from "../../../Assets/loading_animation.webm";
 import axios from "axios";
 import RaceItem from "../RaceItem/RaceItem";
 
-const RaceItemList = () => {
+const RaceItemList = ({setIsPopupOpen}) => {
   const { selectedYear } = useContext(PastSeasonsPageContext);
   const [raceList, setRaceList] = useState([]);
   const [loading, setLoading] = useState(true); // Loading state
@@ -52,6 +52,7 @@ const RaceItemList = () => {
                   Locality={round.Circuit.Location.locality}
                   Country={round.Circuit.Location.country}
                   Date={round.date}
+                  setIsPopupOpen={setIsPopupOpen}
                 />
               );
             }))

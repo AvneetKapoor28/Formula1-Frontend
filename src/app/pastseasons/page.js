@@ -1,4 +1,5 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import "./PastSeasonsPage.css";
 import StandingsHeading from "../Components/StandingsHeadings/StandingsHeading";
 import DropdownYear from "../Components/DropdownYear/DropdownYear";
@@ -7,8 +8,10 @@ import SeasonRaceCount from "../Components/CountWidgets/SeasonRaceCount/SeasonRa
 import DriverCount from "../Components/CountWidgets/DriverCount/DriverCount";
 import ConstructorCount from "../Components/CountWidgets/ConstructorCount/ConstructorCount";
 import RaceItemList from "../Components/RaceItemList/RaceItemList";
+import RacePopUp from "../Components/RacePopUp/RacePopUp";
 
 const PastSeasonsPage = () => {
+  const [ isPopupOpen, setIsPopupOpen ] = useState(false);
   return (
     <div>
       <PastSeasonsPageContextProvider>
@@ -28,9 +31,9 @@ const PastSeasonsPage = () => {
         </div>
 
         <div>
-          {/* <RaceItem /> */}
-          <RaceItemList/>
+          <RaceItemList setIsPopupOpen={setIsPopupOpen} />
         </div>
+          {isPopupOpen ? <RacePopUp setIsPopupOpen={setIsPopupOpen} /> : null}
       </PastSeasonsPageContextProvider>
     </div>
   );
