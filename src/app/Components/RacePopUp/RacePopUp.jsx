@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./RacePopUp.css";
 import { PastSeasonsPageContext } from "@/app/Context/PastSeasonsPageProvider";
-import PopupDriverStandings from "./PopupDriverStandings/PopupDriverStandings";
+import PopupDriverStandingsTable from "./PopupDriverStandings/PopupDriverStandingsTable";
 
 const RacePopUp = ({ setIsPopupOpen }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -24,7 +24,7 @@ const RacePopUp = ({ setIsPopupOpen }) => {
         </button>
         <div className="racename main-heading">RACE NAME</div>
         <div className="raceround">{selectedRound}</div>
-        <PopupDriverStandings />
+        <PopupDriverStandingsTable />
       </div>
     </div>
   );

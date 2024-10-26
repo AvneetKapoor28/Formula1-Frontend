@@ -4,14 +4,13 @@ import { PastSeasonsPageContext } from "@/app/Context/PastSeasonsPageProvider";
 
 
 
-const PopupDriverStandings = (props) => {
+const PopupDriverStandingsTable = (props) => {
     const { selectedRound, selectedYear } = useContext(PastSeasonsPageContext);
   const [roundDriverStandingsList, setRoundDriverStandingsList] = useState([]); // Driver standings state
   const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
     setLoading(true); // Start loading
-    console.log(process.env.NEXT_PUBLIC_API_URL);
     axios
       .get(`${process.env.NEXT_PUBLIC_API_URL}/pastData/driverStandings/${selectedYear}/${selectedRound}`)
       .then((response) => {
@@ -27,8 +26,8 @@ const PopupDriverStandings = (props) => {
   }, [selectedRound, selectedYear]);
   return (
     // INSERT LOADING LOGIC
-    <div>PopupDriverStandings</div>
+    <div>PopupDriverStandingsTable</div>
   )
 }
 
-export default PopupDriverStandings
+export default PopupDriverStandingsTable

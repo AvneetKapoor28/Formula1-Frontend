@@ -13,13 +13,11 @@ const RaceItemList = ({setIsPopupOpen}) => {
 
   useEffect(() => {
     setLoading(true); // Start loading
-    console.log(process.env.NEXT_PUBLIC_API_URL);
     axios
       .get(`${process.env.NEXT_PUBLIC_API_URL}/pastData/races/${selectedYear}`)
       .then((response) => {
         setRaceList(response.data); // Update racelist
         setLoading(false); // Stop loading
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -38,28 +36,27 @@ const RaceItemList = ({setIsPopupOpen}) => {
   } else {
     return (
       <div className="races-container">
-        <div className="main-heading">Races</div>
-        <div className="race-items-container">
-          {raceList.length > 0 ? (
-            (console.log(raceList),
-            raceList.map((round, index) => {
-              return (
-                <RaceItem
-                  key={index}
-                  Round={round.round}
-                  RaceName={round.raceName}
-                  CircuitName={round.Circuit.circuitName}
-                  Locality={round.Circuit.Location.locality}
-                  Country={round.Circuit.Location.country}
-                  Date={round.date}
-                  setIsPopupOpen={setIsPopupOpen}
-                />
-              );
-            }))
-          ) : (
-            <p>No Data Available</p>
-          )}
-        </div>
+      <div className="main-heading">Races</div>
+      <div className="race-items-container">
+        {raceList.length > 0 ? (
+        raceList.map((round, index) => {
+          return (
+          <RaceItem
+            key={index}
+            Round={round.round}
+            RaceName={round.raceName}
+            CircuitName={round.Circuit.circuitName}
+            Locality={round.Circuit.Location.locality}
+            Country={round.Circuit.Location.country}
+            Date={round.date}
+            setIsPopupOpen={setIsPopupOpen}
+          />
+          );
+        })
+        ) : (
+        <p>No Data Available</p>
+        )}
+      </div>
       </div>
     );
   }
