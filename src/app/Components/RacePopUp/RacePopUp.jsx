@@ -5,11 +5,12 @@ import PopupDriverStandingsTable from "./PopupDriverStandings/PopupDriverStandin
 import axios from "axios";
 import loading_animation from "../../../Assets/loading_animation.webm";
 
-const RacePopUp = ({ setIsPopupOpen }) => {
+const RacePopUp = () => {
   const [showPopup, setShowPopup] = useState(false);
   const { selectedRound, selectedYear } = useContext(PastSeasonsPageContext);
   const [roundData, setroundData] = useState([]); // Driver standings state
   const [loadingPopup, setLoadingPopup] = useState(true); // LoadingPopup state
+
 
   useEffect(() => {
     setLoadingPopup(true); // Start loadingPopup
@@ -53,12 +54,23 @@ const RacePopUp = ({ setIsPopupOpen }) => {
   }
   return (
     <div className={`popup-overlay ${showPopup ? "show" : ""}`}>
+      <div>hi</div>
       <div className={`popup-window ${showPopup ? "show" : ""}`}>
         <button className="close-button" onClick={handleClose}>
           x
         </button>
         <div className="racename main-heading">{roundData.raceName}</div>
         <div className="raceround">{selectedRound}</div>
+        <div className="all-content-container">
+          <div className="left-nav-tabs">
+            <div>Standings</div>
+            <div>Analytics</div>
+            <div>fastest lap times</div>
+
+
+          </div>
+          <div className="right-content-container"></div>
+        </div>
         <PopupDriverStandingsTable />
       </div>
     </div>

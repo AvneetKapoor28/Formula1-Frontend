@@ -3,8 +3,13 @@ import "./RaceItem.css";
 import { noto_sans } from "../../fonts";
 import { PastSeasonsPageContext } from "@/app/Context/PastSeasonsPageProvider";
 
+/**
+ * Toggles the display of race details when the RaceItem is clicked.
+ * If `displayRaceDetails` is true, it sets `setDisplayRaceDetails` to false, hiding the race details.
+ * If `displayRaceDetails` is false, it sets `setDisplayRaceDetails` to true, showing the race details.
+ */
 const RaceItem = (props) => {
-  const { selectedRound, setSelectedRound } = useContext(
+  const { selectedRound, setSelectedRound, setDisplayRaceDetails, displayRaceDetails} = useContext(
     PastSeasonsPageContext
   );
 
@@ -16,6 +21,7 @@ const RaceItem = (props) => {
 
   useEffect(() => {
     console.log(selectedRound + " selectedRound updated");
+    setDisplayRaceDetails(true);  //Ensures RaceDetails is displayed when a different round is selected
   }, [selectedRound]); 
 
   return (
@@ -23,7 +29,7 @@ const RaceItem = (props) => {
       className={`raceitem ${noto_sans.className}`}
       onClick={() => {
         setSelectedRound(props.Round);
-        props.setIsPopupOpen(true);
+        {displayRaceDetails ?setDisplayRaceDetails(false): setDisplayRaceDetails(true)}; //Toggling RaceDetials display
       }}
     >
       <div className="date-roundnumber">

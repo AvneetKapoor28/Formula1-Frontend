@@ -7,13 +7,14 @@ const PastSeasonsPageContextProvider = ({ children }) => {
     const [selectedYear, setselectedYear] = useState(new Date().getFullYear() - 1); //State to store the selected year
     const [standings, setStandings] = useState("Drivers"); //State to store the type of standings
     const [selectedRound, setSelectedRound] = useState(1); //State to store the selected round
+    const [displayRaceDetails, setDisplayRaceDetails] = useState(false); //State to show or hide specific race details
 
-    return(
-        <PastSeasonsPageContext.Provider value={{selectedYear, setselectedYear, standings, setStandings, selectedRound, setSelectedRound}}>
+    return (
+        <PastSeasonsPageContext.Provider value={{ selectedYear, setselectedYear, standings, setStandings, selectedRound, setSelectedRound, displayRaceDetails, setDisplayRaceDetails }}>
             {children}
         </PastSeasonsPageContext.Provider>
     )
 
 }
 
-export {PastSeasonsPageContext, PastSeasonsPageContextProvider};
+export { PastSeasonsPageContext, PastSeasonsPageContextProvider };
