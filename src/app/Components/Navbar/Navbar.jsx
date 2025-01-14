@@ -2,14 +2,19 @@
 import React from "react";
 import "./Navbar.css";
 import Image from "next/image";
-import logo from "../../../Assets/Logo.svg";
+import logo from "../../../Assets/logo.png";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+
+  const pathname = usePathname();
+  let isLandingPage = pathname === "/";
+
   const [navSelection, setNavSelection] = useState("HomePage");
   return (
-    <div className="Navbar">
+    <div className={`Navbar ${isLandingPage? "no-bottom-border": "" }`}>
       <div className="website-logo">
         <Link href={"/"} onClick={() => setNavSelection("LandingPage")}>
           {/* <img src={logo} alt="" /> */}

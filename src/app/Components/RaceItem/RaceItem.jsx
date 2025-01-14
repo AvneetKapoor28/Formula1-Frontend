@@ -21,7 +21,7 @@ const RaceItem = (props) => {
 
   useEffect(() => {
     console.log(selectedRound + " selectedRound updated");
-    setDisplayRaceDetails(true);  //Ensures RaceDetails is displayed when a different round is selected
+    // setDisplayRaceDetails(true);  //Ensures RaceDetails is displayed when a different round is selected
   }, [selectedRound]); 
 
   return (

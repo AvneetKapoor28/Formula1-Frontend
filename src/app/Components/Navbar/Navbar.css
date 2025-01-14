@@ -4,10 +4,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5em;
-    padding-bottom: 1.2em;
+    padding: 0em 1em 0em 3em;
+    /* padding-bottom: 1.2em; */
     border-bottom: red 2px solid;
     font-weight: 500;
+}
+
+.Navbar.no-bottom-border{
+    border-bottom: none;
 }
 
 .website-logo img {
