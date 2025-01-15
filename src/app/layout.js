@@ -2,6 +2,7 @@ import { poppins } from "./fonts";
 import "./globals.css";
 import "./Components/Navbar/Navbar"
 import Navbar from "./Components/Navbar/Navbar";
+import { SessionProvider } from "next-auth/react";
 
 export const metadata = {
   title: "Create Next App",
@@ -14,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${poppins.className}`}>
         <Navbar />
-        {children}
+        <SessionProvider>{children}</SessionProvider>
       </body>
     </html>
   );
