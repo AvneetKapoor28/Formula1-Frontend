@@ -14,6 +14,7 @@
     display: flex;
     align-items: center;
     padding: 15px;
+    cursor: default;
 }
 .top-line{
     margin-left: 20px;
@@ -107,7 +108,7 @@
   }
   
   /* Login button */
-  button[type="submit"] {
+  #login-button {
     background-color: #1a73e8; /* Google-like blue */
     color: #fff;
     font-weight: bold;
@@ -119,7 +120,7 @@
     transition: background-color 0.3s ease;
   }
   
-  button[type="submit"]:hover {
+  #login-button:hover {
     background-color: #1558b3; /* Darker blue on hover */
   }
   

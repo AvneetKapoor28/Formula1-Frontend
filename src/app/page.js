@@ -6,6 +6,7 @@ import Image from 'next/image'; // Correct import for Next.js Image
 import googleIcon from '../Assets/google-icon.png'; // Correct image import
 import './landingPage.css';
 import { TypeAnimation } from 'react-type-animation';
+import { doSocialLogin } from './actions';
 
 const LandingPage = () => {
   useEffect(() => {
@@ -33,13 +34,13 @@ const LandingPage = () => {
       </div>
       <div className="right-container">
         <div className="login-form-container">
-          <form>
+          <form action={doSocialLogin}>
             <input type="text" placeholder="Username" />
             <input type="password" placeholder="Password" />
 
-            <button type="submit">Login</button>
+            <button id='login-button' type="submit">Login</button>
 
-            <button className="google-sign-in">
+            <button className="google-sign-in" type='submit' name='action' value='google'>
               <Image src={googleIcon} alt="Google Logo" width={30} />
               <p>
                 Sign in with Google
