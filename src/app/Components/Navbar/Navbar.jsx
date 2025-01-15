@@ -6,6 +6,7 @@ import logo from "../../../Assets/logo.png";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import NavbarLoginButton from "../NavbarLoginButton/NavbarLoginButton";
 
 const Navbar = () => {
 
@@ -48,6 +49,8 @@ const Navbar = () => {
             Past Seasons
           </Link>
         </p>
+
+        <NavbarLoginButton />
       </div>
     </div>
   );

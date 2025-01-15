@@ -8,6 +8,10 @@ export async function doSocialLogin(formData) {
 
 }
 
+export async function doNavbarLogin(){
+    await signIn('google', {redirectTo: '/liverace'});
+}
+
 export async function doLogout(){
     await signOut({redirectTo: '/'});
 }

@@ -14,8 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className}`}>
-        <Navbar />
-        <SessionProvider>{children}</SessionProvider>
+        <SessionProvider>
+          <Navbar />
+          {children}
+        </SessionProvider>
       </body>
     </html>
   );
