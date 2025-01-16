@@ -23,3 +23,5 @@ export const { handlers: { GET, POST },
             })
         ]
     })
+
+// Try using jwt and callbacks
