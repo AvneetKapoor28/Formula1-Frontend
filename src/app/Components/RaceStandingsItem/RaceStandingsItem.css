@@ -1,0 +1,54 @@
+.race-standings-itemcontainer{
+    display: grid;
+    grid-template-columns: 0.5fr 0.4fr 0.8fr 0.5fr 0.8fr;
+    align-items: center;
+    background-color: var(--widget-background-color);
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 80%;
+}
+
+.race-details-header{
+    display: grid;
+    grid-template-columns: 0.5fr 0.4fr 0.8fr 0.5fr 0.8fr;
+    align-items: center;
+    background-color: var(--widget-background-color);
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 82%;
+    font-weight: 700;
+}
+
+.race-standings-position{
+    font-size: 1.2rem;
+    color: #ff6f61;
+    font-weight: 700;
+    text-align: center;
+}
+.race-standings-drivernumber{
+    font-weight: 700;
+}
+
+.race-standings-drivername{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--widget-title-color);
+    padding-left: 2rem;
+    text-align: left;
+}
+
+.race-standings-points{
+    font-size: 1.2rem;
+    color: #2196f3;
+    text-align: center;
+}
+
+.race-standings-time{
+    font-size: 1.2rem;
+    color: #9c27b0;
+    text-align: center;
+}
