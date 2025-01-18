@@ -60,26 +60,30 @@ const RaceDetails = () => {
   }
 
   return (
-    <div className="race-standings-main-container">
-      <div className="race-standings-container">
-        <RaceDetailsHeader />
-        {roundData.Results?.map((result, index) => (
-          <RaceStandingsItem
-            key={index}
-            position={result.position}
-            driverNumber={result.Driver.permanentNumber}
-            driverName={`${result.Driver.givenName} ${result.Driver.familyName}`}
-            points={result.points}
-            status={result.status}
-            time={
-              result.status === "Finished"
-                ? index === 0
-                  ? formatTime(result.Time.millis)
-                  : result.Time.time
-                : result.status
-            }
-          />
-        ))}
+    <div className="outermost-container">
+      <RaceDetailsHeader />
+
+      <div className="race-standings-main-container">
+        <div className="race-standings-container">
+          {/* <RaceDetailsHeader /> */}
+          {roundData.Results?.map((result, index) => (
+            <RaceStandingsItem
+              key={index}
+              position={result.position}
+              driverNumber={result.Driver.permanentNumber}
+              driverName={`${result.Driver.givenName} ${result.Driver.familyName}`}
+              points={result.points}
+              status={result.status}
+              time={
+                result.status === "Finished"
+                  ? index === 0
+                    ? formatTime(result.Time.millis)
+                    : result.Time.time
+                  : result.status
+              }
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
