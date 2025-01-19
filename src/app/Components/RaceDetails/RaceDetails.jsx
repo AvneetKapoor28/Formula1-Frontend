@@ -5,14 +5,19 @@ import "./RaceDetails.css";
 import RaceStandingsItem from "../RaceStandingsItem/RaceStandingsItem";
 import loading_animation from "../../../Assets/loading_animation.webm";
 import RaceDetailsHeader from "./RaceDetailsHeader";
+import RaceDetailsPopup from "./RaceDetailsPopup";
 
 const RaceDetails = () => {
   const [roundData, setroundData] = useState([]); // Driver standings state
+  const [popupData, setPopupData] = useState({});
+  // const [showRaceItemDetailPopup, setShowRaceItemDetailPopup] = useState(false);
   const {
     displayRaceDetails,
     setDisplayRaceDetails,
     selectedRound,
     selectedYear,
+    showRaceItemDetailPopup,
+    setShowRaceItemDetailPopup,
   } = useContext(PastSeasonsPageContext);
   const [loading, setLoading] = useState(true); // Loading state
 
@@ -31,6 +36,31 @@ const RaceDetails = () => {
     return `${formattedHours}:${formattedMinutes}:${formattedSeconds}.${formattedMilliseconds}`;
   };
 
+  const retrieveRaceDetailsPopupValues = (index) => {
+    console.log("from the function", index);
+    console.log(roundData);
+
+    const newPopupData = {
+      driverName: `${roundData.Results[index].Driver.givenName} ${roundData.Results[index].Driver.familyName}`,
+      constructorName: roundData.Results[index].Constructor.name,
+      raceName: roundData.raceName,
+      season: roundData.season,
+      averageSpeed: roundData.Results[index].FastestLap.AverageSpeed.speed,
+      unit: roundData.Results[index].FastestLap.AverageSpeed.units,
+      fastestLapTime: roundData.Results[index].FastestLap.Time.time,
+      fastestLapRank: roundData.Results[index].FastestLap.rank,
+      time: roundData.Results[index].Time
+        ? formatTime(roundData.Results[index].Time.millis)
+        : "DNF",
+      points: roundData.Results[index].points,
+      incident: roundData.Results[index].status,
+      gridStartingPosition: roundData.Results[index].grid,
+    };
+
+    setPopupData(newPopupData); // Update state
+    console.log(newPopupData);
+  };
+
   useEffect(() => {
     setLoading(true); // Start loading
     axios
@@ -47,6 +77,8 @@ const RaceDetails = () => {
         setLoading(false); // Stop loading on error
         setroundData([]); // Clear roundDataStandingsList on error
       });
+
+      
   }, [selectedRound, selectedYear]);
 
   if (loading) {
@@ -65,26 +97,38 @@ const RaceDetails = () => {
 
       <div className="race-standings-main-container">
         <div className="race-standings-container">
-          {/* <RaceDetailsHeader /> */}
           {roundData.Results?.map((result, index) => (
-            <RaceStandingsItem
-              key={index}
-              position={result.position}
-              driverNumber={result.Driver.permanentNumber}
-              driverName={`${result.Driver.givenName} ${result.Driver.familyName}`}
-              points={result.points}
-              status={result.status}
-              time={
-                result.status === "Finished"
-                  ? index === 0
-                    ? formatTime(result.Time.millis)
-                    : result.Time.time
-                  : result.status
-              }
-            />
+            <div
+              className="racedetail-standings-itemcontainer"
+              onClick={() => {
+                setShowRaceItemDetailPopup(!showRaceItemDetailPopup);
+                console.log("clicked" + index);
+                retrieveRaceDetailsPopupValues(index);
+              }}
+            >
+              <RaceStandingsItem
+                key={index}
+                position={result.position}
+                driverNumber={result.Driver.permanentNumber}
+                driverName={`${result.Driver.givenName} ${result.Driver.familyName}`}
+                points={result.points}
+                status={result.status}
+                time={
+                  result.status === "Finished"
+                    ? index === 0
+                      ? formatTime(result.Time.millis)
+                      : result.Time.time
+                    : result.status
+                }
+              />
+              {console.log(result)}
+            </div>
           ))}
         </div>
       </div>
+      {showRaceItemDetailPopup ? (
+        <RaceDetailsPopup PopupData={popupData} />
+      ) : null}
     </div>
   );
 };

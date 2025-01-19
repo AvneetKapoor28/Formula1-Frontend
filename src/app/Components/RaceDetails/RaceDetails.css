@@ -15,7 +15,6 @@
     padding: 10px;
     background-color: var(--background); /* Dark background for better aesthetics */
     border-radius: 8px; /* Add rounded corners for a polished look */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   }
   
   .race-standings-container {
@@ -30,6 +29,12 @@
     padding: 10px;
     background-color: var(--background); /* Slightly lighter background for contrast */
     border-radius: 8px; /* Match the outer container's rounding */
+  }
+
+  .racedetail-standings-itemcontainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
   
 

@@ -1,0 +1,39 @@
+.race-details-popup-fullpage-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.race-details-popup-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.race-details-popup-exitcross {
+    cursor: pointer;
+}
+
+.race-details-popup-racename {
+    position: relative;
+    bottom: 10px;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.race-details-popup-main-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}

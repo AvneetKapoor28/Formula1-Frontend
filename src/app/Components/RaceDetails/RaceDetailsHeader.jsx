@@ -7,7 +7,7 @@ const RaceDetailsHeader = () => {
       <div className="race-details-header-number">Number</div>
       <div className="race-details-header-drivername">Driver</div>
       <div className="race-details-header-points">Points</div>
-      <div className="race-details-header-time">Time</div>
+      <div className="race-details-header-time">Time / Incident</div>
     </div>
   );
 };
