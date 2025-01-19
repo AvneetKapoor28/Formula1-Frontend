@@ -45,6 +45,8 @@ const RaceDetails = () => {
       constructorName: roundData.Results[index].Constructor.name,
       raceName: roundData.raceName,
       season: roundData.season,
+      driverNationality: roundData.Results[index].Driver.nationality,
+      constructorNationality: roundData.Results[index].Constructor.nationality,
       averageSpeed: roundData.Results[index].FastestLap.AverageSpeed.speed,
       unit: roundData.Results[index].FastestLap.AverageSpeed.units,
       fastestLapTime: roundData.Results[index].FastestLap.Time.time,
