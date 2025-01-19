@@ -79,8 +79,6 @@ const RaceDetails = () => {
         setLoading(false); // Stop loading on error
         setroundData([]); // Clear roundDataStandingsList on error
       });
-
-      
   }, [selectedRound, selectedYear]);
 
   if (loading) {
@@ -101,6 +99,7 @@ const RaceDetails = () => {
         <div className="race-standings-container">
           {roundData.Results?.map((result, index) => (
             <div
+              key={index}
               className="racedetail-standings-itemcontainer"
               onClick={() => {
                 setShowRaceItemDetailPopup(!showRaceItemDetailPopup);
