@@ -1,0 +1,40 @@
+.outermost-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.race-standings-main-container {
+    height: 500px; /* Limit the height of the main container */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: flex-start; /* Align items at the top */
+    padding: 10px;
+    background-color: var(--background); /* Dark background for better aesthetics */
+    border-radius: 8px; /* Add rounded corners for a polished look */
+  }
+  
+  .race-standings-container {
+
+    max-height: 100%; /* Limit the height to prevent overflow */
+    width: 80%;
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 10px; /* Add space between items */
+    padding: 10px;
+    background-color: var(--background); /* Slightly lighter background for contrast */
+    border-radius: 8px; /* Match the outer container's rounding */
+  }
+
+  .racedetail-standings-itemcontainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+

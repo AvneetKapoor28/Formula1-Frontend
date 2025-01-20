@@ -8,9 +8,11 @@ const PastSeasonsPageContextProvider = ({ children }) => {
     const [standings, setStandings] = useState("Drivers"); //State to store the type of standings
     const [selectedRound, setSelectedRound] = useState(1); //State to store the selected round
     const [displayRaceDetails, setDisplayRaceDetails] = useState(false); //State to show or hide specific race details
+    const [showRaceItemDetailPopup, setShowRaceItemDetailPopup] = useState(false);
+
 
     return (
-        <PastSeasonsPageContext.Provider value={{ selectedYear, setselectedYear, standings, setStandings, selectedRound, setSelectedRound, displayRaceDetails, setDisplayRaceDetails }}>
+        <PastSeasonsPageContext.Provider value={{ selectedYear, setselectedYear, standings, setStandings, selectedRound, setSelectedRound, displayRaceDetails, setDisplayRaceDetails, showRaceItemDetailPopup, setShowRaceItemDetailPopup }}>
             {children}
         </PastSeasonsPageContext.Provider>
     )

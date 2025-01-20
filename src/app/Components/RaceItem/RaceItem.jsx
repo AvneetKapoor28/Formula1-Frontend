@@ -19,17 +19,22 @@ const RaceItem = (props) => {
     .toLocaleDateString("en-US", options)
     .replace(",", "-");
 
-  useEffect(() => {
-    console.log(selectedRound + " selectedRound updated");
-    // setDisplayRaceDetails(true);  //Ensures RaceDetails is displayed when a different round is selected
-  }, [selectedRound]); 
+  // useEffect(() => {
+  //   console.log(selectedRound + " selectedRound updated");
+  //   // setDisplayRaceDetails(true);  //Ensures RaceDetails is displayed when a different round is selected
+  // }, [selectedRound]); 
 
   return (
     <div
       className={`raceitem ${noto_sans.className}`}
       onClick={() => {
-        setSelectedRound(props.Round);
-        {displayRaceDetails ?setDisplayRaceDetails(false): setDisplayRaceDetails(true)}; //Toggling RaceDetials display
+        if(selectedRound === props.Round){
+          {displayRaceDetails ?setDisplayRaceDetails(false): setDisplayRaceDetails(true)}; //Toggling RaceDetials display
+        }
+        else{
+          setSelectedRound(props.Round);
+          setDisplayRaceDetails(true);
+        }
       }}
     >
       <div className="date-roundnumber">
