@@ -10,6 +10,7 @@ const RaceItemList = ({setIsPopupOpen}) => {
   const { selectedYear } = useContext(PastSeasonsPageContext);
   const [raceList, setRaceList] = useState([]);
   const [loading, setLoading] = useState(true); // Loading state
+  const [selectedRaceItem, setSelectedRaceItem] = useState(null);
 
   useEffect(() => {
     setLoading(true); // Start loading
@@ -41,7 +42,7 @@ const RaceItemList = ({setIsPopupOpen}) => {
         {raceList.length > 0 ? (
         raceList.map((round, index) => {
           return (
-          <RaceItem
+            <RaceItem
             key={index}
             Round={round.round}
             RaceName={round.raceName}
@@ -50,6 +51,8 @@ const RaceItemList = ({setIsPopupOpen}) => {
             Country={round.Circuit.Location.country}
             Date={round.date}
             setIsPopupOpen={setIsPopupOpen}
+            selectedRaceItem={selectedRaceItem}
+            setSelectedRaceItem={setSelectedRaceItem}
           />
           );
         })

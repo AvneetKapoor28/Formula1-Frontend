@@ -74,3 +74,12 @@
     background-color: #2a2a2a;
     border-radius: 8px;
 }
+
+.raceitem.selected {
+    background-color: #181818; /* Change this to match your theme */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    scale: 1.03;
+    transition: all 0.2s ease-in-out;
+  }
+  

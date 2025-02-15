@@ -12,6 +12,8 @@ const RaceItem = (props) => {
   const { selectedRound, setSelectedRound, setDisplayRaceDetails, displayRaceDetails} = useContext(
     PastSeasonsPageContext
   );
+  
+  const isSelected = props.selectedRaceItem === props.Round;
 
   const options = { day: "numeric", month: "short" };
   const date = new Date(props.Date);
@@ -24,14 +26,18 @@ const RaceItem = (props) => {
   //   // setDisplayRaceDetails(true);  //Ensures RaceDetails is displayed when a different round is selected
   // }, [selectedRound]); 
 
+ 
   return (
     <div
-      className={`raceitem ${noto_sans.className}`}
+      className={`raceitem ${noto_sans.className} ${isSelected ? "selected" : ""}`}
       onClick={() => {
-        if(selectedRound === props.Round){
-          {displayRaceDetails ?setDisplayRaceDetails(false): setDisplayRaceDetails(true)}; //Toggling RaceDetials display
-        }
-        else{
+        if (isSelected) {
+          // If already selected, deselect it
+          props.setSelectedRaceItem(null);
+          setDisplayRaceDetails(false);
+        } else {
+          // Select new item
+          props.setSelectedRaceItem(props.Round);
           setSelectedRound(props.Round);
           setDisplayRaceDetails(true);
         }
