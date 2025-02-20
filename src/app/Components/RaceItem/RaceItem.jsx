@@ -34,12 +34,13 @@ const RaceItem = (props) => {
         if (isSelected) {
           // If already selected, deselect it
           props.setSelectedRaceItem(null);
-          setDisplayRaceDetails(false);
+          setSelectedRound(null);
+          // setDisplayRaceDetails(false);
         } else {
           // Select new item
           props.setSelectedRaceItem(props.Round);
           setSelectedRound(props.Round);
-          setDisplayRaceDetails(true);
+          // setDisplayRaceDetails(true);
         }
       }}
     >

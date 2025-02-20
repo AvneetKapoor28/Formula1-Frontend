@@ -1,0 +1,17 @@
+.raceoranalytics-outer-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    padding-bottom: 40px;
+    cursor: pointer;
+
+}
+
+.raceoranalytics-inner-container{
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    font-size: 2rem;
+
+}

@@ -9,10 +9,12 @@ import DriverCount from "../Components/CountWidgets/DriverCount/DriverCount";
 import ConstructorCount from "../Components/CountWidgets/ConstructorCount/ConstructorCount";
 import RaceItemList from "../Components/RaceItemList/RaceItemList";
 import RaceDetails from "../Components/RaceDetails/RaceDetails";
+import ResultsOrAnalytics from "../Components/ResultsOrAnalytics/ResultsOrAnalytics";
+import RaceAnalytics from "../Components/RaceAnalytics/RaceAnalytics";
 
 const PastSeasonsPageContent = () => {
   // const [ isPopupOpen, setIsPopupOpen ] = useState(false); //deprecated
-  const { displayRaceDetails, setDisplayRaceDetails } = useContext(PastSeasonsPageContext);
+  const { displayRaceDetails, setDisplayRaceDetails, selectedRound, displayRaceAnalytics } = useContext(PastSeasonsPageContext);
   return (
     <div>
       <div className="standingsheading-selectyear">
@@ -33,7 +35,8 @@ const PastSeasonsPageContent = () => {
       <div>
         <RaceItemList />
       </div>
-      {displayRaceDetails ? <RaceDetails /> : null}
+      <ResultsOrAnalytics />
+      {displayRaceDetails && selectedRound ? <RaceDetails /> : displayRaceAnalytics && selectedRound ? <RaceAnalytics /> : <div className="please-choose-round">Please Choose a Round</div>}
 
     </div>
   );
