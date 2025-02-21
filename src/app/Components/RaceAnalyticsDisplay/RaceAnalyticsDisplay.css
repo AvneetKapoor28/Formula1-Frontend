@@ -1,6 +1,6 @@
 .raceanalyticsdisplay-heading{
     font-size: 3rem;
-    margin-left: 10px;
+    margin-left: 20px;
     font-weight: 500;
 }
 
@@ -12,3 +12,11 @@
     margin-bottom: 30px;
 
 }
+
+.analytic-img{
+    /* width: 70%; */
+    height: 80vh;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+

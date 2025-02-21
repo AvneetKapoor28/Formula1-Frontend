@@ -32,7 +32,7 @@ const RaceAnalyticsDisplay = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:8000/lap-analysis/${displayRaceAnalyticsChoice}`, {
+      .get(`http://localhost:8000/race-analysis/${displayRaceAnalyticsChoice}`, {
         params: {
           year: selectedYear,
           round_no: selectedRound,

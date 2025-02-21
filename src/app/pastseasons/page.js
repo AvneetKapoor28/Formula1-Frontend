@@ -37,7 +37,7 @@ const PastSeasonsPageContent = () => {
       </div>
       <ResultsOrAnalytics />
       {displayRaceDetails && selectedRound ? <RaceDetails /> : displayRaceAnalyticsOptions && selectedRound ? <RaceAnalytics /> : <div className="please-choose-round">Please Choose a Round</div>}
-      {displayRaceAnalyticsChoice !== null ? <RaceAnalyticsDisplay/> : null}
+      {displayRaceAnalyticsChoice !== null && !displayRaceDetails ? <RaceAnalyticsDisplay/> : null}
 
     </div>
   );
