@@ -36,7 +36,7 @@ const RaceAnalyticsDisplay = () => {
     setLoading(true);
     axios
       .get(
-        `http://localhost:8000/race-analysis/${displayRaceAnalyticsChoice}`,
+        `${process.env.NEXT_PUBLIC_FASTAPI_URL}/race-analysis/${displayRaceAnalyticsChoice}`,
         {
           params: {
             year: selectedYear,
