@@ -32,13 +32,13 @@ const RaceAnalyticsDisplay = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:8000/${displayRaceAnalyticsChoice}`, {
+      .get(`http://localhost:8000/lap-analysis/${displayRaceAnalyticsChoice}`, {
         params: {
           year: selectedYear,
           round_no: selectedRound,
           session_type: "R",
         },
-        responseType: "blob", // 👈 Tells Axios to return binary data (image)
+        responseType: "blob",
       })
       .then((response) => {
         const blob = new Blob([response.data], { type: "image/png" }); // Create Blob
@@ -59,7 +59,6 @@ const RaceAnalyticsDisplay = () => {
       <div className="loading-container">
         <video autoPlay loop muted className="video-player">
           <source src={loading_animation} type="video/webm" />
-          {/* Your browser does not support the video tag. */}
         </video>
       </div>
     );
