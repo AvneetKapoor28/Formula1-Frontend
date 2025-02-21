@@ -7,23 +7,23 @@ const RaceAnalytics = () => {
     const {displayRaceAnalyticsChoice, setDisplayRaceAnalyticsChoice} = useContext(PastSeasonsPageContext);
 
     const showFastestLapGearShifts = () => {
-        setDisplayRaceAnalyticsChoice(displayRaceAnalyticsChoice === 'Fastest Lap Gear Shifts' ? null : 'Fastest Lap Gear Shifts');
+        setDisplayRaceAnalyticsChoice(displayRaceAnalyticsChoice === 'fastest-lap-gear-shifts-plot' ? null : 'fastest-lap-gear-shifts-plot');
     }
 
     const showTeamPaceComparison = () => {
-        setDisplayRaceAnalyticsChoice(displayRaceAnalyticsChoice === 'Team Pace Comparison' ? null : 'Team Pace Comparison');
+        setDisplayRaceAnalyticsChoice(displayRaceAnalyticsChoice === 'team-pace-comparison' ? null : 'team-pace-comparison');
     }
 
     const showTyreStrategies = () => {
-        setDisplayRaceAnalyticsChoice(displayRaceAnalyticsChoice === 'Tyre Strategies' ? null : 'Tyre Strategies');
+        setDisplayRaceAnalyticsChoice(displayRaceAnalyticsChoice === 'tyre-strategies' ? null : 'tyre-strategies');
     }
 
     const showDriverLaptimesDistribution = () => {
-        setDisplayRaceAnalyticsChoice(displayRaceAnalyticsChoice === 'Driver Laptimes Distribution' ? null : 'Driver Laptimes Distribution');
+        setDisplayRaceAnalyticsChoice(displayRaceAnalyticsChoice === 'driver-laptimes-distribution' ? null : 'driver-laptimes-distribution');
     }
 
     const showPositionChangesDuringRace = () => {
-        setDisplayRaceAnalyticsChoice(displayRaceAnalyticsChoice === 'Position Changes During Race' ? null : 'Position Changes During Race');
+        setDisplayRaceAnalyticsChoice(displayRaceAnalyticsChoice === 'position-changes-during-race' ? null : 'position-changes-during-race');
     }
     
 
