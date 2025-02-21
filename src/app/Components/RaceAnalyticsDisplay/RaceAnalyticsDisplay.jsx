@@ -23,8 +23,11 @@ const RaceAnalyticsDisplay = () => {
       return "Team Pace Comparison";
     else if (displayRaceAnalyticsChoice === "tyre-strategies")
       return "Tyre Strategies";
-    else if (displayRaceAnalyticsChoice === "driver-laptimes-distribution")
-      return "Driver Laptimes Distribution";
+    else if (
+      displayRaceAnalyticsChoice ===
+      "driver-laptimes-distribution--tyrecompound"
+    )
+      return "Driver's Laptimes Distribution Based on Tyre Compound";
     else if (displayRaceAnalyticsChoice === "position-changes-during-race")
       return "Position Changes During Race";
   };
@@ -32,14 +35,17 @@ const RaceAnalyticsDisplay = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:8000/race-analysis/${displayRaceAnalyticsChoice}`, {
-        params: {
-          year: selectedYear,
-          round_no: selectedRound,
-          session_type: "R",
-        },
-        responseType: "blob",
-      })
+      .get(
+        `http://localhost:8000/race-analysis/${displayRaceAnalyticsChoice}`,
+        {
+          params: {
+            year: selectedYear,
+            round_no: selectedRound,
+            session_type: "R",
+          },
+          responseType: "blob",
+        }
+      )
       .then((response) => {
         const blob = new Blob([response.data], { type: "image/png" }); // Create Blob
         const imageUrl = URL.createObjectURL(blob); // Convert Blob to URL
@@ -69,7 +75,9 @@ const RaceAnalyticsDisplay = () => {
           {getHeading(displayRaceAnalyticsChoice)}
         </div>
         <div className="analytic-img-container">
-          {imageSrc && (<img className="analytic-img" src={imageSrc} alt="Race Analytics" />)}
+          {imageSrc && (
+            <img className="analytic-img" src={imageSrc} alt="Race Analytics" />
+          )}
         </div>
       </div>
     );
