@@ -18,10 +18,12 @@
     margin-left: 10px;
     width: 100px;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .website-logo img:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 .links {
@@ -39,45 +41,65 @@
 }
 
 /* Hover effect for links */
+
 .links p:hover {
-    color: var(--selected-heading-color);
-    /* Color change on hover */
+    /* color: var(--selected-heading-color); */
+    background: linear-gradient(90deg, red, blue, purple);
+    background-size: 300% 300%; /* For smooth gradient animation */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite;
+    cursor: pointer;
+    /* Change color on hover if desired */
 }
 
 /* Underline animation on hover */
-.links p::after {
+/* .links p::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: -5px;
     width: 0;
     height: 2px;
-    background-color: var(--selected-heading-color);
+    background: linear-gradient(90deg, red, blue, purple);
+    background-size: 400% 150%;
+    transition: width 0.4s ease-in-out; 
+} */
 
+.links p:hover::after {
+    width: 100%;
+    animation: gradientMove 2s infinite;
 }
 
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 .Navbar .links .selected {
-    color: var(--selected-heading-color);
+    background: linear-gradient(90deg, red, blue, purple);
+    background-size: 300% 300%; /* For smooth gradient animation */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite;
     /* Stay highlighted */
 }
 
 .Navbar .links .selected::after {
+    animation: gradientMove 0.5s infinite;
     animation: underlineSlide 0.4s ease forwards;
     /* Keep underline */
 }
 
-@keyframes underlineSlide {
-    0% {
-        width: 0;
-        left: 50%;
-    }
-
-    100% {
-        width: 100%;
-        left: 0;
-    }
-}
 
 .spanforlink {
     text-decoration: none;

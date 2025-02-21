@@ -20,10 +20,6 @@
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.driversOrConstructors h3:hover {
-    /* color: var(--foreground);  */
-    transform: scale(1.05);
-}
 
 .driversOrConstructors span {
     color: rgb(207, 201, 201);
@@ -31,26 +27,6 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* Selected styles */
-.driversOrConstructors .selected {
-    color: var(--selected-heading-color); /* Highlighted color */
-    transform: scale(1.05);
-    font-weight: 500;
-    position: relative;
-}
-
-.driversOrConstructors .selected::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -5px;
-    height: 3px;
-    background-color: var(--selected-heading-color);
-    width: 100%;
-    transform: translateX(-50%);
-    opacity: 0;
-    animation: underlineSlide 0.3s ease forwards;
-}
 
 @keyframes underlineSlide {
     0% {
@@ -71,7 +47,10 @@
     bottom: -5px;
     height: 2px;
     width: 0;
-    background-color: var(--foreground);
+    /* background-color:rgba(245, 8, 8, 0.954); */
+    background: linear-gradient(90deg, blue, red, blue);
+    background-size: 300%;
+
     transition: width 0.3s ease, left 0.3s ease;
 }
 

@@ -15,3 +15,49 @@
     font-size: 2rem;
 
 }
+
+.race-results-tab-heading:hover {
+    /* color: var(--selected-heading-color); */
+    background: linear-gradient(90deg, red, blue, purple);
+    background-size: 300% 300%; /* For smooth gradient animation */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite;
+    /* Change color on hover if desired */
+}
+
+.analytics-tab-heading:hover {
+    /* color: var(--selected-heading-color); */
+    background: linear-gradient(90deg, red, blue, purple);
+    background-size: 300% 300%; /* For smooth gradient animation */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite;
+    /* Change color on hover if desired */
+}
+
+.selected-tab-heading {
+    /* color: var(--selected-heading-color); */
+    background: linear-gradient(90deg, red, blue, purple);
+    background-size: 300% 300%; /* For smooth gradient animation */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite;
+    /* Change color on hover if desired */
+}
+
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
