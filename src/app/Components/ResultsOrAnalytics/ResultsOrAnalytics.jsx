@@ -7,44 +7,48 @@ const ResultsOrAnalytics = () => {
   const {
     displayRaceDetails,
     setDisplayRaceDetails,
-    displayRaceAnalytics,
-    setDisplayRaceAnalytics,
-    selectedRaceItem
+    displayRaceAnalyticsOptions,
+    setDisplayRaceAnalyticsOptions,
+    selectedRaceItem,
   } = useContext(PastSeasonsPageContext);
 
   const [selectedTabHeading, setSelectedTabHeading] = useState("RaceResults");
 
   const showAnalytics = () => {
-    setDisplayRaceAnalytics(true);
+    setDisplayRaceAnalyticsOptions(true);
     setDisplayRaceDetails(false);
     setSelectedTabHeading("Analytics");
   };
 
   const showRaceResults = () => {
     setDisplayRaceDetails(true);
-    setDisplayRaceAnalytics(false);
+    setDisplayRaceAnalyticsOptions(false);
     setSelectedTabHeading("RaceResults");
     console.log("showRaceResults was clicked");
   };
 
-return (
+  return (
     <div className="raceoranalytics-outer-container">
-        <div className="raceoranalytics-inner-container">
-            <div
-                className={`race-results-tab-heading ${selectedTabHeading === "RaceResults" ? "selected-tab-heading" : ""}`}
-                onClick={() => showRaceResults()}
-            >
-                Race Results
-            </div>
-            <div
-                className={`analytics-tab-heading ${selectedTabHeading === "Analytics" ? "selected-tab-heading" : ""}`}
-                onClick={() => showAnalytics()}
-            >
-                Analytics
-            </div>
+      <div className="raceoranalytics-inner-container">
+        <div
+          className={`race-results-tab-heading ${
+            selectedTabHeading === "RaceResults" ? "selected-tab-heading" : ""
+          }`}
+          onClick={() => showRaceResults()}
+        >
+          Race Results
         </div>
+        <div
+          className={`analytics-tab-heading ${
+            selectedTabHeading === "Analytics" ? "selected-tab-heading" : ""
+          }`}
+          onClick={() => showAnalytics()}
+        >
+          Analytics
+        </div>
+      </div>
     </div>
-);
+  );
 };
 
 export default ResultsOrAnalytics;

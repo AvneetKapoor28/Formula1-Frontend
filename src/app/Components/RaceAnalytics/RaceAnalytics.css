@@ -3,15 +3,16 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height: 50vh;
+    height: 70vh;
     gap: 30px;
     cursor: pointer;
+    overflow: scroll;
 
 }
 
 .raceanalytics-element {
     width: 25%;
-    height: 50%;
+    height: 40%;
     background: linear-gradient(135deg,  
         rgba(255, 0, 0, 0.85) 10%,   /* Deep racing red */
         rgba(150, 0, 200, 0.8) 40%, /* Stylish purple */
@@ -20,6 +21,7 @@
     background-size: 300% 300%;
     animation: gradientMove 5s ease-in-out infinite;
     border-radius: 15px;
+    padding: 10px;
     /* border: 2px solid rgba(200, 200, 200, 0.2); */
 
     display: flex;
@@ -28,14 +30,13 @@
     text-align: center;
     font-size: 1.3rem;
     color: white; /* Ensures text readability */
-    font-weight: bold;
+    font-weight: 400;
     letter-spacing: 1px;
     transition: transform 0.1s ease-in-out;
 }
 
 .raceanalytics-element:hover{
     transform: scale(1.04);
-
 }
 
 @keyframes gradientMove {
