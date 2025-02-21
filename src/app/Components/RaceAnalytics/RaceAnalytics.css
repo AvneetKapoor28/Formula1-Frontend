@@ -3,6 +3,49 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    height: 50vh;
+    gap: 30px;
+    cursor: pointer;
+
+}
+
+.raceanalytics-element {
+    width: 25%;
+    height: 50%;
+    background: linear-gradient(135deg,  
+        rgba(255, 0, 0, 0.85) 10%,   /* Deep racing red */
+        rgba(150, 0, 200, 0.8) 40%, /* Stylish purple */
+        rgba(0, 0, 255, 0.75) 90%   /* Cool electric blue */
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 5s ease-in-out infinite;
+    border-radius: 15px;
+    /* border: 2px solid rgba(200, 200, 200, 0.2); */
+
+    display: flex;
+    justify-content: center;  /* Aligns horizontally */
+    align-items: center;  /* Aligns vertically */
+    text-align: center;
+    font-size: 1.3rem;
+    color: white; /* Ensures text readability */
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: transform 0.1s ease-in-out;
+}
+
+.raceanalytics-element:hover{
+    transform: scale(1.04);
+
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
