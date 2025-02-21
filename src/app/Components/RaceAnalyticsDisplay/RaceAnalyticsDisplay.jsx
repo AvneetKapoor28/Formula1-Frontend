@@ -75,9 +75,7 @@ const RaceAnalyticsDisplay = () => {
           {getHeading(displayRaceAnalyticsChoice)}
         </div>
         <div className="analytic-img-container">
-          {imageSrc && (
-            <img className="analytic-img" src={imageSrc} alt="Race Analytics" />
-          )}
+          {imageSrc && (<img className="analytic-img" src={imageSrc} alt="Race Analytics" />)}
         </div>
       </div>
     );

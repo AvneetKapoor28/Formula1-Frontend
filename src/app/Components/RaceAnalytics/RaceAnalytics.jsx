@@ -72,7 +72,7 @@ const RaceAnalytics = () => {
         className="raceanalytics-element"
         onClick={() => showDriverLaptimesDistribution()}
       >
-        Driver's Laptimes Distribution Based on Tyre Compound
+        Driver&apos;s Laptimes Distribution Based on Tyre Compound
       </div>
       <div
         className="raceanalytics-element"
