@@ -1,7 +1,7 @@
 import { poppins } from "./fonts";
 import "./globals.css";
 import "./Components/Navbar/Navbar"
-import Navbar from "./Components/Navbar/Navbar";
+import NavbarWrapper from "./Components/NavbarWrapper/NavbarWrapper";
 
 export const metadata = {
   title: "Formula-1 Dashboard",
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className}`}>
-        <Navbar />
+        <NavbarWrapper />
         {children}
       </body>
     </html>

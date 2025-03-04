@@ -1,0 +1,132 @@
+/* Auth Page Container */
+.auth-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+}
+
+/* Modern, Wider Login Block */
+.login-block {
+    background: rgba(255, 255, 255, 0.08); /* Subtle transparency */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 450px; /* Increased width for better spacing */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-block:hover {
+    transform: scale(1.02);
+}
+
+/* Heading */
+.login-block h2 {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* Input Field Container */
+.input-field-with-image {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input Field */
+.input-field-with-image input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Placeholder Styling */
+.input-field-with-image input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+}
+
+/* Icons Styling */
+.input-field-with-image img {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+    filter: invert(1); /* Makes the icons white */
+    opacity: 0.8;
+}
+
+/* Input Field Hover & Focus Effect */
+.input-field-with-image:hover,
+.input-field-with-image:focus-within {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Minimalist Button */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    color: white;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff6b4b, #ff627c);
+    transform: translateY(-2px);
+}
+
+/* 🔥 Forgot Password & Already Have an Account Links */
+.auth-links {
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Hover Effect */
+.auth-links:hover {
+    color: #ff4b2b;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .login-block {
+        width: 90%;
+        padding: 40px;
+    }
+
+    .input-field-with-image {
+        padding: 12px;
+    }
+
+    button {
+        padding: 12px;
+    }
+}
