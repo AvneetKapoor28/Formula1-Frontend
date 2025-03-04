@@ -20,9 +20,9 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.login-block:hover {
+/* .login-block:hover {
     transform: scale(1.02);
-}
+} */
 
 /* Heading */
 .login-block h2 {
@@ -30,6 +30,7 @@
     font-size: 26px;
     font-weight: 600;
     margin-bottom: 25px;
+    cursor: default;
 }
 
 /* Input Field Container */
@@ -106,13 +107,14 @@ button:hover {
     font-weight: 500;
     cursor: pointer;
     transition: color 0.3s ease-in-out, transform 0.2s;
+    cursor: pointer;
 }
 
 /* Hover Effect */
 .auth-links:hover {
     color: #ff4b2b;
     text-decoration: underline;
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
 }
 
 /* Responsive Design */
