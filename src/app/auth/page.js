@@ -1,24 +1,66 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./authpage.css";
 import Image from "next/image";
 import userIcon from "../../Assets/user-icon.svg";
 import passwordIcon from "../../Assets/lock-icon.svg";
 import emailIcon from "../../Assets/envelope-icon.svg";
+import { AppContent } from "../Context/AppContext";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Page = () => {
+    const router = useRouter();
     const [authState, setAuthState] = useState("signup"); // options: login, signup, forgotPassword
+    const {setIsLoggedIn} = useContext(AppContent);
 
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const onSubmitHandler = async (e) => {
+        try{
+            e.preventDefault();
+
+            axios.defaults.withCredentials = true;
+
+            if(authState === "signup"){
+                const {data} = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/register`,{username, email, password})
+
+                if(data.success){
+                    setIsLoggedIn(true);
+                    router.replace('/');
+                    toast.success("Registered successfully")
+                }
+                else{
+                    toast.error(data.message)
+                }
+            }
+            else{
+                const {data} = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`,{email, password})
+
+                if(data.success){
+                    setIsLoggedIn(true);
+                    router.replace('/');
+                    toast.success("Logged in successfully")
+                }
+                else{
+                    toast.error(data.message)
+                }
+            }
+        }
+        catch(error){
+            toast.error("An error occurred. Please try again.")
+        }
+    }
 
     if (authState === "signup") {
         return (
             <div className="auth-page-container">
                 <div className="login-block">
                     <h2>Sign Up</h2>
-                    <form>
+                    <form onSubmit={onSubmitHandler}>
                         <div className="input-field-with-image">
                             <Image src={userIcon} alt="User Icon" width={20} height={20} />
                             <input
@@ -60,7 +102,7 @@ const Page = () => {
             <div className="auth-page-container">
                 <div className="login-block">
                     <h2>Login</h2>
-                    <form>
+                    <form onSubmit={onSubmitHandler}>
                         <div className="input-field-with-image">
                             <Image src={emailIcon} alt="Email Icon" width={20} height={20} />
                             <input
