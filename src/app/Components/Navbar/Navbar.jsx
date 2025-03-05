@@ -6,15 +6,15 @@ import logo from "../../../Assets/logo.png";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import LoginButton from "../LoginButton/LoginButton";
 
 const Navbar = () => {
-
   const pathname = usePathname();
   let isLandingPage = pathname === "/";
 
   const [navSelection, setNavSelection] = useState("HomePage");
   return (
-    <div className={`Navbar ${isLandingPage? "no-bottom-border": "" }`}>
+    <div className={`Navbar ${isLandingPage ? "no-bottom-border" : ""}`}>
       <div className="website-logo">
         <Link href={"/"} onClick={() => setNavSelection("LandingPage")}>
           {/* <img src={logo} alt="" /> */}
@@ -48,6 +48,10 @@ const Navbar = () => {
             Past Seasons
           </Link>
         </p>
+        {/* <Link href={"/auth"}>
+          <div className="login-button">Login</div>
+        </Link> */}
+        <LoginButton/>
       </div>
     </div>
   );

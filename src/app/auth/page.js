@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 const Page = () => {
     const router = useRouter();
     const [authState, setAuthState] = useState("signup"); // options: login, signup, forgotPassword
-    const {setIsLoggedIn} = useContext(AppContent);
+    const {setIsLoggedIn, getUserData} = useContext(AppContent);
 
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -31,6 +31,7 @@ const Page = () => {
                 if(data.success){
                     setIsLoggedIn(true);
                     router.replace('/');
+                    getUserData();
                     toast.success("Registered successfully")
                 }
                 else{
@@ -43,6 +44,7 @@ const Page = () => {
                 if(data.success){
                     setIsLoggedIn(true);
                     router.replace('/');
+                    getUserData();
                     toast.success("Logged in successfully")
                 }
                 else{
