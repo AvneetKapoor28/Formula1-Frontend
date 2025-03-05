@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.className}`}>
         <AppContextProvider>
           <NavbarWrapper />
-          <ToastContainer />
+          <ToastContainer position="bottom-center"/>
           {children}
         </AppContextProvider>
       </body>

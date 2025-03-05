@@ -165,13 +165,9 @@
     animation: gradientMove 3s infinite;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     color: white;
+    cursor: pointer;
 }
 
-/* Smooth button click effect */
-/* .login-button:active {
-    transform: scale(0.98);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-} */
 
 
 
