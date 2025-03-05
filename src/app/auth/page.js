@@ -81,7 +81,7 @@ const Page = () => {
                         <button type="submit">Login</button>
                     </form>
                     <p className="auth-links" onClick={() => setAuthState("signup")}>
-                        Don't have an account? <span style={{ textDecoration: 'underline' }}>Signup</span>
+                        Don&apos;t have an account? <span style={{ textDecoration: 'underline' }}>Signup</span>
                     </p>
                 </div>
             </div>
