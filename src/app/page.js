@@ -1,9 +1,10 @@
 'use client'
 import React, { useEffect } from 'react'
 import { lexend_deca } from "./fonts";
-
 import './landingPage.css'
 import { TypeAnimation } from 'react-type-animation';
+import Image from 'next/image';
+import pilots from '../../public/pilots.png';
 
 const LandingPage = () => {
   useEffect(() => {
@@ -33,7 +34,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className='right-container'>
-        LOGIN
+        <Image src={pilots} alt='landing-page-image' />
       </div>
     </div>
   )

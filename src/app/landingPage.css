@@ -18,11 +18,27 @@
     margin-left: 15px;
 }
 .middle-line{
-    color: rgb(233, 18, 18);
-    font-style: italic;
+    /* color: rgb(233, 18, 18); */
+    /* font-style: italic; */
     font-size: 1.6em;
     font-weight: 700;
-
+    background: linear-gradient(90deg, red, blue, purple);
+    background-size: 300% 300%; /* For smooth gradient animation */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite;
+}
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 .lines-container{
     font-size: 5em;
@@ -30,8 +46,10 @@
 }
 
 .right-container{
-    flex: 4;
-    /* background-color: blue; */
+    width: 40%;
+    height: 100%;
+    position: relative;
     display: flex;
     align-items: center;
+    margin-right: 20px;
 }
