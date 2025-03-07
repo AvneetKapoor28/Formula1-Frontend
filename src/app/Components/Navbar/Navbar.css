@@ -6,7 +6,7 @@
     align-items: center;
     padding: 0em 1em 0em 3em;
     /* padding-bottom: 1.2em; */
-    border-bottom: red 2px solid;
+    border-bottom: rgba(255, 0, 0, 0.63) 0.5px solid;
     font-weight: 500;
 }
 
