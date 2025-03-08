@@ -9,13 +9,13 @@ import { usePathname } from "next/navigation";
 import { CurrentSeasonPageContext } from "@/app/Context/CurrentSeasonPageProvider";
 import { motion } from "framer-motion";
 const DriverStandingTable = () => {
+  const pastSeasonsContext = useContext(PastSeasonsPageContext);
   const pathname = usePathname();
+  const currentSeasonContext = useContext(CurrentSeasonPageContext);
   let selectedYear;
   if (pathname === "/pastseasons") {
-    const pastSeasonsContext = useContext(PastSeasonsPageContext);
     selectedYear = pastSeasonsContext?.selectedYear;
   } else if (pathname === "/currentseason") {
-    const currentSeasonContext = useContext(CurrentSeasonPageContext);
     selectedYear = currentSeasonContext?.selectedYear;
   }
   const [loading, setLoading] = useState(true); // Loading state

@@ -11,12 +11,12 @@ import { motion } from "framer-motion";
 
 const ConstructorStandingTable = () => {
   const pathname = usePathname();
+  const pastSeasonsContext = useContext(PastSeasonsPageContext);
+  const currentSeasonContext = useContext(CurrentSeasonPageContext);
   let selectedYear;
   if (pathname === "/pastseasons") {
-    const pastSeasonsContext = useContext(PastSeasonsPageContext);
     selectedYear = pastSeasonsContext?.selectedYear;
   } else if (pathname === "/currentseason") {
-    const currentSeasonContext = useContext(CurrentSeasonPageContext);
     selectedYear = currentSeasonContext?.selectedYear;
   }
   const [loading, setLoading] = useState(true); // Loading state
