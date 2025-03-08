@@ -1,7 +1,8 @@
 .standings-and-info-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
+    height: 100%;
 }
 .currentpage-standingsheadingcontainer{
     width:65%;
@@ -15,6 +16,14 @@
     align-items: center;
 }
 
+.twitterfeed-container{
+    padding: 20px;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+}
 
 .selected-tab-heading {
     background: linear-gradient(90deg, red, blue, purple);

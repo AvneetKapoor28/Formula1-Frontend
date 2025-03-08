@@ -1,0 +1,27 @@
+.twitter-container {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .twitter-container:hover{
+    box-shadow: 0 0px 10px rgba(0, 12, 143, 0.7);
+
+  }
+
+  .twitter-inner-container{
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: auto;
+
+  }

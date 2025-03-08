@@ -5,6 +5,7 @@ import { CurrentSeasonPageContext, CurrentSeasonPageContextProvider } from '../C
 import './currentSeasonPage.css'
 import CollisionsCount from '../Components/CollisionsCount/CollisionsCount';
 import axios from 'axios';
+import TwitterFeed from '../Components/TwitterFeed/TwitterFeed';
 
 
 const CurrentSeasonPageContent = () => {
@@ -31,14 +32,17 @@ const CurrentSeasonPageContent = () => {
   }, []);
 
   return (
-    <div className='standings-and-info-container'>
-      <div className='currentpage-standingsheadingcontainer'>
-        <StandingsHeading />
+    <>
+      <div className='standings-and-info-container'>
+        <div className='currentpage-standingsheadingcontainer'>
+          <StandingsHeading />
+        </div>
+        {/* <div className='currentpage-collisionscountcontainer'>
+          <CollisionsCount collisions={collisionsCount} isLoading={isCollisionCountLoading} />
+        </div> */}
+        <div className='twitterfeed-container'><TwitterFeed /></div>
       </div>
-      <div className='currentpage-collisionscountcontainer'>
-        <CollisionsCount collisions={collisionsCount} isLoading={isCollisionCountLoading} />
-      </div>
-    </div>
+    </>
 
 
   )
