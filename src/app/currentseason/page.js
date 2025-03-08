@@ -37,11 +37,11 @@ const CurrentSeasonPageContent = () => {
         <div className='currentpage-standingsheadingcontainer'>
           <StandingsHeading />
         </div>
-        {/* <div className='currentpage-collisionscountcontainer'>
-          <CollisionsCount collisions={collisionsCount} isLoading={isCollisionCountLoading} />
-        </div> */}
         <div className='twitterfeed-container'><TwitterFeed /></div>
       </div>
+        <div className='currentpage-collisionscountcontainer'>
+          <CollisionsCount collisions={collisionsCount} isLoading={isCollisionCountLoading} />
+        </div>
     </>
 
 
