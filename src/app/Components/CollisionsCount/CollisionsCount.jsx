@@ -2,7 +2,7 @@ import React from "react";
 import "./CollisionsCount.css";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import collisionIcon from "../../../assets/collision-icon.svg";
+import collisionIcon from "../../../Assets/collision-icon.svg";
 
 const CollisionsCount = ({ collisions, isLoading }) => {
   return (
