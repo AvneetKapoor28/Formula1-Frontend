@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 import styles from "../CountWidgetStyles.module.css";
 import axios from "axios";
 import { PastSeasonsPageContext } from "../../../Context/PastSeasonsPageProvider";
+import { motion } from "framer-motion";
 
 const ConstructorCount = () => {
   const [constructorCount, setConstructorCount] = useState(null);
@@ -26,16 +27,26 @@ const ConstructorCount = () => {
       });
   }, [selectedYear]);
   return (
-    <div className={styles.widget}>
+    <motion.div
+      className={styles.widget}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <h3 className={styles.widgetTitle}>Constructor Count</h3>
       {loading ? (
         <p className={styles.loadingText}>Loading...</p>
       ) : (
-        <div className={styles.count}>
+        <motion.div
+          className={styles.count}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           {constructorCount || "No data available"}
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

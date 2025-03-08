@@ -4,6 +4,7 @@ import { PastSeasonsPageContext } from "@/app/Context/PastSeasonsPageProvider";
 import "./RaceAnalyticsDisplay.css";
 import axios from "axios";
 import loading_animation from "../../../Assets/loading_animation.webm";
+import { motion } from "framer-motion";
 
 const RaceAnalyticsDisplay = () => {
   const {
@@ -70,14 +71,20 @@ const RaceAnalyticsDisplay = () => {
     );
   } else {
     return (
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="raceanalyticsdisplay-heading">
           {getHeading(displayRaceAnalyticsChoice)}
         </div>
         <div className="analytic-img-container">
-          {imageSrc && (<img className="analytic-img" src={imageSrc} alt="Race Analytics" />)}
+          {imageSrc && (
+            <img className="analytic-img" src={imageSrc} alt="Race Analytics" />
+          )}
         </div>
-      </div>
+      </motion.div>
     );
   }
 };

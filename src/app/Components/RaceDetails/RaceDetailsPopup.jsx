@@ -3,13 +3,12 @@ import "./RaceDetailsPopup.css";
 import { PastSeasonsPageContext } from "@/app/Context/PastSeasonsPageProvider";
 import RaceDetailsWidget from "../RaceDetailsWidget/RaceDetailsWidget";
 import axios from "axios";
-
+import {motion} from "framer-motion";
 
 const RaceDetailsPopup = ({ PopupData }) => {
   const [loading, setLoading] = useState(true); // Loading state
   const [driverflag, setDriverFlag] = useState(" ");
   const [constructorflag, setConstructorFlag] = useState(" ");
-
 
   const { showRaceItemDetailPopup, setShowRaceItemDetailPopup } = useContext(
     PastSeasonsPageContext
@@ -17,7 +16,9 @@ const RaceDetailsPopup = ({ PopupData }) => {
 
   useEffect(() => {
     setLoading(true);
-    console.log(`${process.env.NEXT_PUBLIC_API_URL}/pastData/flag/${PopupData.driverNationality}/${PopupData.constructorNationality}`)
+    console.log(
+      `${process.env.NEXT_PUBLIC_API_URL}/pastData/flag/${PopupData.driverNationality}/${PopupData.constructorNationality}`
+    );
     axios
       .get(
         `${process.env.NEXT_PUBLIC_API_URL}/pastData/flag/${PopupData.driverNationality}/${PopupData.constructorNationality}`
@@ -33,13 +34,24 @@ const RaceDetailsPopup = ({ PopupData }) => {
         setConstructorFlag(" ");
         setLoading(false);
       });
-  },[PopupData]);
+  }, [PopupData]);
   return (
-    <div className="race-details-popup-fullpage-container">
+    <motion.div
+      className="race-details-popup-fullpage-container"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+    >
       <div className="race-details-popup-center-container">
         <div className="race-details-popup-header">
           <div className="race-details-popup-drivername">
-            {PopupData.driverName + " " + driverflag+  " | " + PopupData.constructorName + " " + constructorflag}
+            {PopupData.driverName +
+              " " +
+              driverflag +
+              " | " +
+              PopupData.constructorName +
+              " " +
+              constructorflag}
           </div>
           <div
             className="race-details-popup-exitcross"
@@ -48,7 +60,9 @@ const RaceDetailsPopup = ({ PopupData }) => {
             x
           </div>
         </div>
-        <div className="race-details-popup-racename">{PopupData.raceName + " " + PopupData.season}</div>
+        <div className="race-details-popup-racename">
+          {PopupData.raceName + " " + PopupData.season}
+        </div>
         <div className="race-details-popup-main-content-container">
           <RaceDetailsWidget
             title="Average Speed"
@@ -71,7 +85,7 @@ const RaceDetailsPopup = ({ PopupData }) => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

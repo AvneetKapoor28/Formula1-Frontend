@@ -1,0 +1,46 @@
+.collisions-widget {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    width: 60%;
+    height: fit-content;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* position: relative; */
+  }
+
+.collisions-widget:hover {
+    box-shadow: 0 0px 10px rgba(0, 12, 143, 0.664);
+  }
+  
+  .widget-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .collision-icon {
+    position: absolute;
+    top: 0px;
+    left: 0.6rem;
+    /* transform: translateX(-50%); */
+  }
+  
+  .collision-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
+    margin: 10px 0;
+  }
+  
+  .widget-footer {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+  

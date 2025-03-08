@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import "./RaceAnalytics.css";
 import { PastSeasonsPageContext } from "@/app/Context/PastSeasonsPageProvider";
+import { motion } from "framer-motion";
 
 const RaceAnalytics = () => {
   const { displayRaceAnalyticsChoice, setDisplayRaceAnalyticsChoice } =
@@ -49,7 +50,12 @@ const RaceAnalytics = () => {
   };
 
   return (
-    <div className="raceanalytics-container">
+      <motion.div
+        className="raceanalytics-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
       <div
         className="raceanalytics-element"
         onClick={() => showFastestLapGearShifts()}
@@ -80,7 +86,7 @@ const RaceAnalytics = () => {
       >
         Compare Position Changes During Race
       </div>
-    </div>
+    </motion.div>
   );
 };
 

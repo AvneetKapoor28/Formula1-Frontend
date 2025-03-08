@@ -5,9 +5,19 @@ import { PastSeasonsPageContext } from "../../Context/PastSeasonsPageProvider";
 import DriverStandingItem from "../StandingsItems/DriverStandingItem/DriverStandingItem";
 import "./DriverStandingTable.css";
 import loading_animation from "../../../Assets/loading_animation.webm";
-
+import { usePathname } from "next/navigation";
+import { CurrentSeasonPageContext } from "@/app/Context/CurrentSeasonPageProvider";
+import { motion } from "framer-motion";
 const DriverStandingTable = () => {
-  const { selectedYear } = useContext(PastSeasonsPageContext);
+  const pathname = usePathname();
+  let selectedYear;
+  if (pathname === "/pastseasons") {
+    const pastSeasonsContext = useContext(PastSeasonsPageContext);
+    selectedYear = pastSeasonsContext?.selectedYear;
+  } else if (pathname === "/currentseason") {
+    const currentSeasonContext = useContext(CurrentSeasonPageContext);
+    selectedYear = currentSeasonContext?.selectedYear;
+  }
   const [loading, setLoading] = useState(true); // Loading state
   const [driverStandingsList, setDriverStandingsList] = useState([]); // Driver standings state
 
@@ -40,7 +50,12 @@ const DriverStandingTable = () => {
     );
   } else {
     return (
-      <div className="heading-and-items">
+      <motion.div
+        className="heading-and-items"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="driver-standing-header">
           <div className="driver-standing-header-item">Position</div>
           <div className="driver-standing-header-item number-heading">
@@ -76,7 +91,7 @@ const DriverStandingTable = () => {
             <p>No data available</p>
           )}
         </div>
-      </div>
+      </motion.div>
     );
   }
 };

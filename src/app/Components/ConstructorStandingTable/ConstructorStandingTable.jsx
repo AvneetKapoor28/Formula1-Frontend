@@ -5,9 +5,20 @@ import axios from "axios";
 import { PastSeasonsPageContext } from "../../Context/PastSeasonsPageProvider";
 import ConstructorStandingItem from "../StandingsItems/ConstructorStandingItem/ConstructorStandingItem";
 import loading_animation from "../../../Assets/loading_animation.webm";
+import { usePathname } from "next/navigation";
+import { CurrentSeasonPageContext } from "@/app/Context/CurrentSeasonPageProvider";
+import { motion } from "framer-motion";
 
 const ConstructorStandingTable = () => {
-  const { selectedYear } = useContext(PastSeasonsPageContext);
+  const pathname = usePathname();
+  let selectedYear;
+  if (pathname === "/pastseasons") {
+    const pastSeasonsContext = useContext(PastSeasonsPageContext);
+    selectedYear = pastSeasonsContext?.selectedYear;
+  } else if (pathname === "/currentseason") {
+    const currentSeasonContext = useContext(CurrentSeasonPageContext);
+    selectedYear = currentSeasonContext?.selectedYear;
+  }
   const [loading, setLoading] = useState(true); // Loading state
   const [constructorStandingsList, setConstructorStandingsList] = useState([]); // Driver standings state
 
@@ -41,7 +52,12 @@ const ConstructorStandingTable = () => {
     );
   } else {
     return (
-      <div className="heading-and-items">
+      <motion.div
+        className="heading-and-items"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
         <div className="constructor-standing-header position-heading">
           <div className="constructor-standing-header-item">Position</div>
           <div className="constructor-standing-header-item constructor-heading-constructor-table">
@@ -69,7 +85,7 @@ const ConstructorStandingTable = () => {
             <p>No data available</p>
           )}
         </div>
-      </div>
+      </motion.div>
     );
   }
 };

@@ -6,6 +6,7 @@ import RaceStandingsItem from "../RaceStandingsItem/RaceStandingsItem";
 import loading_animation from "../../../Assets/loading_animation.webm";
 import RaceDetailsHeader from "./RaceDetailsHeader";
 import RaceDetailsPopup from "./RaceDetailsPopup";
+import { motion } from "framer-motion";
 
 const RaceDetails = () => {
   const [roundData, setroundData] = useState([]); // Driver standings state
@@ -92,7 +93,12 @@ const RaceDetails = () => {
   }
 
   return (
-    <div className="outermost-container">
+      <motion.div
+        className="outermost-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
       <RaceDetailsHeader />
 
       <div className="race-standings-main-container">
@@ -130,7 +136,7 @@ const RaceDetails = () => {
       {showRaceItemDetailPopup ? (
         <RaceDetailsPopup PopupData={popupData} />
       ) : null}
-    </div>
+    </motion.div>
   );
 };
 

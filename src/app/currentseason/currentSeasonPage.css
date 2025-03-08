@@ -1,0 +1,40 @@
+.standings-and-info-container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.currentpage-standingsheadingcontainer{
+    width:65%;
+    margin-left: 20px;
+}
+
+.currentpage-collisionscountcontainer{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.selected-tab-heading {
+    background: linear-gradient(90deg, red, blue, purple);
+    background-size: 300% 300%; /* For smooth gradient animation */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite;
+
+}
+
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
