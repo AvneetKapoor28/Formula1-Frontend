@@ -23,8 +23,8 @@ const YoutubeFeed = () => {
 
   return (
     <div className="all-videos-container">
-      {ytDataList.map((video) => (
-        <div className="single-video-container">
+      {ytDataList.map((video, iterator ) => (
+        <div key={iterator} className="single-video-container">
           <iframe
             width="448"
             height="252"
