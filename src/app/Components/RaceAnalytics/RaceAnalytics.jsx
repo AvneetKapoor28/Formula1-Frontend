@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { useContext } from "react";
 import "./RaceAnalytics.css";
 import { PastSeasonsPageContext } from "@/app/Context/PastSeasonsPageProvider";
 import { motion } from "framer-motion";
 
 const RaceAnalytics = () => {
+  const componentRef = useRef();
+  useEffect(() => {
+      if (componentRef.current) {
+        componentRef.current.scrollIntoView({ behavior: "smooth", block: "start", inline: "center" });
+      }
+    }, []);
+
   const { displayRaceAnalyticsChoice, setDisplayRaceAnalyticsChoice } =
     useContext(PastSeasonsPageContext);
 
@@ -52,6 +59,7 @@ const RaceAnalytics = () => {
   return (
       <motion.div
         className="raceanalytics-container"
+        ref={componentRef}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}

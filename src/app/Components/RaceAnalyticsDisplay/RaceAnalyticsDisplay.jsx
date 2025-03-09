@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useContext, useState } from "react";
 import { PastSeasonsPageContext } from "@/app/Context/PastSeasonsPageProvider";
 import "./RaceAnalyticsDisplay.css";
@@ -16,6 +16,8 @@ const RaceAnalyticsDisplay = () => {
 
   const [imageSrc, setImageSrc] = useState("");
   const [loading, setLoading] = useState(true);
+
+  const componentRef = useRef();
 
   const getHeading = (displayRaceAnalyticsChoice) => {
     if (displayRaceAnalyticsChoice === "fastest-lap-gear-shifts-plot")
@@ -61,9 +63,19 @@ const RaceAnalyticsDisplay = () => {
       });
   }, [displayRaceAnalyticsChoice, selectedYear, selectedRound]);
 
+  useEffect(() => {
+    if (componentRef.current) {
+      componentRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "center",
+      });
+    }
+  }, []);
+
   if (loading) {
     return (
-      <div className="loading-container">
+      <div ref={componentRef} className="loading-container">
         <video autoPlay loop muted className="video-player">
           <source src={loading_animation} type="video/webm" />
         </video>
@@ -72,6 +84,7 @@ const RaceAnalyticsDisplay = () => {
   } else {
     return (
       <motion.div
+        ref={componentRef}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}

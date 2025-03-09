@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useRef} from "react";
 import { PastSeasonsPageContext } from "@/app/Context/PastSeasonsPageProvider";
 import axios from "axios";
 import "./RaceDetails.css";
@@ -11,10 +11,9 @@ import { motion } from "framer-motion";
 const RaceDetails = () => {
   const [roundData, setroundData] = useState([]); // Driver standings state
   const [popupData, setPopupData] = useState({});
+  const componentRef = useRef();
   // const [showRaceItemDetailPopup, setShowRaceItemDetailPopup] = useState(false);
   const {
-    displayRaceDetails,
-    setDisplayRaceDetails,
     selectedRound,
     selectedYear,
     showRaceItemDetailPopup,
@@ -82,9 +81,16 @@ const RaceDetails = () => {
       });
   }, [selectedRound, selectedYear]);
 
+  // Scroll to the top of the component when it mounts
+  useEffect(() => {
+    if (componentRef.current) {
+      componentRef.current.scrollIntoView({ behavior: "smooth", block: "start", inline: "center" });
+    }
+  }, []);
+
   if (loading) {
     return (
-      <div className="loading-container">
+      <div ref={componentRef} className="loading-container">
         <video autoPlay loop muted className="video-player">
           <source src={loading_animation} type="video/webm" />
         </video>
@@ -95,6 +101,7 @@ const RaceDetails = () => {
   return (
       <motion.div
         className="outermost-container"
+        ref={componentRef}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
