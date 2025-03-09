@@ -20,7 +20,11 @@ const Standings = () => {
           onClick={() => {
             setStandings("Drivers");
           }}
-          className={standings === "Drivers" ? "selected-tab-heading" : ""}
+          className={
+            standings === "Drivers"
+              ? "standings-choice-selected-tab-heading"
+              : ""
+          }
         >
           Drivers
         </h3>{" "}
@@ -29,7 +33,11 @@ const Standings = () => {
           onClick={() => {
             setStandings("Constructors");
           }}
-          className={standings === "Constructors" ? "selected-tab-heading" : ""}
+          className={
+            standings === "Constructors"
+              ? "standings-choice-selected-tab-heading"
+              : ""
+          }
         >
           Constructors
         </h3>

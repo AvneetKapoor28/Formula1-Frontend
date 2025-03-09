@@ -8,19 +8,15 @@ import axios from 'axios';
 import TwitterFeed from '../Components/TwitterFeed/TwitterFeed';
 import YoutubeFeed from '../Components/YotutubeFeed/YoutubeFeed';
 
-
 const CurrentSeasonPageContent = () => {
-  const [standings, setStandings] = useState("Drivers"); //State to store the type of standings
-  const [collisionsCount, setCollisionsCount] = useState(null); //State to store the number of collisions
-  const [isCollisionCountLoading, setIsCollisionCountLoading] = useState(true); // Loading state
-  const { selectedYear } = useContext(CurrentSeasonPageContext)
+  const [collisionsCount, setCollisionsCount] = useState(null);
+  const [isCollisionCountLoading, setIsCollisionCountLoading] = useState(true);
+  const { selectedYear } = useContext(CurrentSeasonPageContext);
 
   useEffect(() => {
     setIsCollisionCountLoading(true);
     axios
-      .get(
-        `${process.env.NEXT_PUBLIC_API_URL}/currentData/collisionCount/${selectedYear}`
-      )
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/currentData/collisionCount/${selectedYear}`)
       .then((response) => {
         setCollisionsCount(response.data)
         setIsCollisionCountLoading(false);
@@ -33,31 +29,36 @@ const CurrentSeasonPageContent = () => {
   }, []);
 
   return (
-    <>
-      <div className='standings-and-info-container'>
-        <div className='currentpage-standingsheadingcontainer'>
+    <div className="current-season-grid">
+      {/* Left Side (65%) */}
+      <div className="left-column">
+        <div className="currentpage-standings-container">
           <StandingsHeading />
         </div>
-        <div className='twitterfeed-container'><TwitterFeed /></div>
-      </div>
-        {/* <div className='currentpage-collisionscountcontainer'>
+        <div className="collisions-container">
           <CollisionsCount collisions={collisionsCount} isLoading={isCollisionCountLoading} />
-        </div> */}
-        <div className='currentpage-ytfeed-container'> <YoutubeFeed/> </div>
-    </>
+        </div>
+      </div>
 
-
-  )
-}
-
+      {/* Right Side (35%) */}
+      <div className="right-column">
+        <div className="twitterfeed-container">
+          <TwitterFeed />
+        </div>
+        <div className="youtube-container">
+          <YoutubeFeed />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const CurrentSeasonPage = () => {
   return (
     <CurrentSeasonPageContextProvider>
       <CurrentSeasonPageContent />
     </CurrentSeasonPageContextProvider>
+  );
+};
 
-  )
-}
-
-export default CurrentSeasonPage
+export default CurrentSeasonPage;

@@ -59,3 +59,12 @@
     left: 0;
 }
 
+
+.standings-choice-selected-tab-heading{
+    background: linear-gradient(90deg, red, blue, purple);
+    background-size: 300% 300%; /* For smooth gradient animation */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite;
+}
