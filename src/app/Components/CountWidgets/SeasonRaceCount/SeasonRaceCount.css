@@ -1,0 +1,67 @@
+/* Driver Count Widget - Minimalistic Glassy Styling */
+
+.season-race-widget {
+    /* background: rgba(255, 255, 255, 0.1); */
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 20px;
+    max-width: 320px;
+    text-align: center;
+    /* box-shadow: 0 8px 16px rgba(0, 12, 143, 0.3); */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 20px auto;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.widget-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    /* color: #ffffff; */
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.season-race-widget-icon {
+    filter: drop-shadow(0px 3px 5px rgba(177, 0, 0, 0.754));
+    /* width: 30px; */
+    height: auto;
+}
+
+.loading-text {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.season-race-value {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 14px 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    backdrop-filter: blur(6px);
+}
+
+.widget-footer {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.season-race-widget:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 12, 143, 0.446);
+}

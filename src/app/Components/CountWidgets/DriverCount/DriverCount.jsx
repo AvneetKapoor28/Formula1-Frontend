@@ -1,9 +1,11 @@
 "use client";
 import React, { useState, useContext, useEffect } from "react";
-import styles from "../CountWidgetStyles.module.css";
+import "./DriverCount.css";
 import { PastSeasonsPageContext } from "../../../Context/PastSeasonsPageProvider";
 import axios from "axios";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import racingHelmet from "../../../../Assets/racing-helmet.png";
 
 const DriverCount = () => {
   const [driverCount, setDriverCount] = useState(null);
@@ -28,18 +30,21 @@ const DriverCount = () => {
   }, [selectedYear]);
 
   return (
-    <motion.div
-      className={styles.widget}
-      initial={{ opacity: 0, y: 20 }}
+    <motion.div 
+      className="driver-widget"
+      initial={{ opacity: 0, y: 20 }} 
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <h3 className={styles.widgetTitle}>Driver Count</h3>
+      <div className="widget-header">
+        <Image src={racingHelmet} alt="Helmet Icon" className="widget-icon" width={28} height={28} />
+        <h2>Drivers</h2>
+      </div>
       {loading ? (
-        <p className={styles.loadingText}>Loading...</p>
+        <p className="loading-text">Loading...</p>
       ) : (
-        <motion.div
-          className={styles.count}
+        <motion.div 
+          className="driver-value"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -47,6 +52,7 @@ const DriverCount = () => {
           {driverCount || "No data available"}
         </motion.div>
       )}
+      <p className="widget-footer">Total Drivers in Season</p>
     </motion.div>
   );
 };

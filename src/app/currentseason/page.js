@@ -6,6 +6,7 @@ import './currentSeasonPage.css'
 import CollisionsCount from '../Components/CollisionsCount/CollisionsCount';
 import axios from 'axios';
 import TwitterFeed from '../Components/TwitterFeed/TwitterFeed';
+import YoutubeFeed from '../Components/YotutubeFeed/YoutubeFeed';
 
 
 const CurrentSeasonPageContent = () => {
@@ -39,9 +40,10 @@ const CurrentSeasonPageContent = () => {
         </div>
         <div className='twitterfeed-container'><TwitterFeed /></div>
       </div>
-        <div className='currentpage-collisionscountcontainer'>
+        {/* <div className='currentpage-collisionscountcontainer'>
           <CollisionsCount collisions={collisionsCount} isLoading={isCollisionCountLoading} />
-        </div>
+        </div> */}
+        <div className='currentpage-ytfeed-container'> <YoutubeFeed/> </div>
     </>
 
 

@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import "./TwitterFeed.css";
+import Image from "next/image";
+import twitterIcon from "../../../Assets/twitter-icon.svg";
+
 const TwitterFeed = () => {
   useEffect(() => {
-    // Load Twitter script dynamically
     const script = document.createElement("script");
     script.src = "https://platform.twitter.com/widgets.js";
     script.async = true;
@@ -10,9 +12,14 @@ const TwitterFeed = () => {
     document.body.appendChild(script);
   }, []);
 
+
+  //MAY REMOVE ICON
   return (
     <div className="twitter-container">
-      Latest Posts on X
+      <div className="twitter-heading-container">
+        <Image src={twitterIcon} className="twitter-icon" alt="Twitter Logo" width={90} />
+        {/* <h2>Latest On</h2> */}
+      </div>
       <div className="twitter-inner-container">
         <a
           className="twitter-timeline"

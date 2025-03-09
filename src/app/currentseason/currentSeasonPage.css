@@ -25,6 +25,11 @@
     /* background-color: red; */
 }
 
+.currentpage-ytfeed-container{
+    background-color: red;
+    width: 500px;
+}
+
 .selected-tab-heading {
     background: linear-gradient(90deg, red, blue, purple);
     background-size: 300% 300%; /* For smooth gradient animation */

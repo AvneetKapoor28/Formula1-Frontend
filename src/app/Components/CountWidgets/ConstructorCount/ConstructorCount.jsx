@@ -1,14 +1,16 @@
 "use client";
 import React, { useEffect, useState, useContext } from "react";
-import styles from "../CountWidgetStyles.module.css";
+import "./ConstructorCount.css";
 import axios from "axios";
 import { PastSeasonsPageContext } from "../../../Context/PastSeasonsPageProvider";
 import { motion } from "framer-motion";
+import racecar from "../../../../Assets/racecar.png";
+import Image from "next/image";
 
 const ConstructorCount = () => {
   const [constructorCount, setConstructorCount] = useState(null);
   const { selectedYear } = useContext(PastSeasonsPageContext);
-  const [loading, setLoading] = useState(true); // Loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
@@ -26,19 +28,23 @@ const ConstructorCount = () => {
         setLoading(false);
       });
   }, [selectedYear]);
+
   return (
-    <motion.div
-      className={styles.widget}
-      initial={{ opacity: 0, y: 20 }}
+    <motion.div 
+      className="constructor-widget"
+      initial={{ opacity: 0, y: 20 }} 
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <h3 className={styles.widgetTitle}>Constructor Count</h3>
+      <div className="widget-header">
+        <Image src={racecar} alt="Racecar Icon" className="constructor-widget-icon" width={60} height={60} />
+        <h2>Constructors</h2>
+      </div>
       {loading ? (
-        <p className={styles.loadingText}>Loading...</p>
+        <p className="loading-text">Loading...</p>
       ) : (
-        <motion.div
-          className={styles.count}
+        <motion.div 
+          className="constructor-value"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -46,6 +52,7 @@ const ConstructorCount = () => {
           {constructorCount || "No data available"}
         </motion.div>
       )}
+      <p className="widget-footer">Total Constructors in Season</p>
     </motion.div>
   );
 };
