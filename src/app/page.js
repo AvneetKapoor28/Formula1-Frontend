@@ -5,6 +5,7 @@ import './landingPage.css'
 import { TypeAnimation } from 'react-type-animation';
 import Image from 'next/image';
 import pilots from '../../public/pilots.png';
+import { motion } from 'framer-motion';
 
 const LandingPage = () => {
   useEffect(() => {
@@ -14,7 +15,12 @@ const LandingPage = () => {
     };
   })
   return (
-    <div className='landing'>
+      <motion.div
+        className="landing"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
       <div className='left-container'>
         <div className='lines-container'>
           <div className='top-line'>Discover</div>
@@ -33,10 +39,10 @@ const LandingPage = () => {
           {/* <div className='bottom-line'>At your Fingertips</div> */}
         </div>
       </div>
-      <div className='right-container'>
+      {/* <div className='right-container'>
         <Image src={pilots} alt='landing-page-image' />
-      </div>
-    </div>
+      </div> */}
+    </motion.div>
   )
 }
 

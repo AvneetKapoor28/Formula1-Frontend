@@ -9,7 +9,9 @@ import "react-toastify/dist/ReactToastify.css";
 export const metadata = {
   title: "Formula-1 Dashboard",
   description: "A dashboard for Formula 1 data",
-  image: "/icon.png",
+  icons:{
+    icon:"/favicon.png"
+  } 
 };
 
 
