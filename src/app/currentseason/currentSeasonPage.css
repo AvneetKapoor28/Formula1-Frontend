@@ -26,8 +26,14 @@
 }
 
 .currentpage-ytfeed-container{
-    background-color: red;
-    width: 500px;
+    /* background-color: red; */
+    background: #1e1e1e;
+    width: 700px;
+    height: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .selected-tab-heading {
