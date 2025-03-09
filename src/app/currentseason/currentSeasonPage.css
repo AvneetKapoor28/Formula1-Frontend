@@ -25,21 +25,38 @@
 /* Ensure Standings & Collisions Are Properly Styled */
 .currentpage-standings-container, .collisions-container {
     width: 100%;
-    /* background: rgba(255, 255, 255, 0.08); */
+    /* background: #1e1e1e; */
+    border: 1px solid #333;
+
     padding: 16px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
 }
 
+.collisions-container{
+    background: #1e1e1e;
+
+}
 /* Twitter & YouTube Feed Styling */
 .twitterfeed-container, .youtube-container {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 20px;
+    padding-top: 5px;
     width: 100%;
-    /* background: rgba(255, 255, 255, 0.08); */
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    height: 600px;
+    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.twitterfeed-container:hover, .youtube-container:hover,.currentpage-standings-container:hover, .collisions-container:hover{
+    box-shadow: 0 0px 10px rgba(0, 12, 143, 0.7);
+    
 }
 
 /* Responsive Design */

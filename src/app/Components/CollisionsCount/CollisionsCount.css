@@ -1,5 +1,6 @@
 .collisions-widget {
-    background: #1e1e1e;
+    /* background: #1e1e1e; */
+    background-color: var(--background);
     border: 1px solid #333;
     border-radius: 12px;
     padding: 20px;

@@ -1,10 +1,17 @@
+.yt-widget-header{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.yt-icon-img{
+    margin: 10px;
+}
 .all-videos-container{
     /* background-color: red; */
     height: 800px;
     overflow: auto;
 }
-
-
 
 .single-video-container {
     max-width: 480px;

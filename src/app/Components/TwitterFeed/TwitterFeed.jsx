@@ -15,7 +15,7 @@ const TwitterFeed = () => {
 
   //MAY REMOVE ICON
   return (
-    <div className="twitter-container">
+    <>
       <div className="twitter-heading-container">
         <Image src={twitterIcon} className="twitter-icon" alt="Twitter Logo" width={90} />
         {/* <h2>Latest On</h2> */}
@@ -28,7 +28,7 @@ const TwitterFeed = () => {
           Tweets by F1
         </a>
       </div>
-    </div>
+    </>
   );
 };
 

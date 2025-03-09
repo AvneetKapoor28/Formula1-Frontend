@@ -13,10 +13,10 @@
     justify-content: center;
   }
   
-  .twitter-container:hover{
+  /* .twitter-container:hover{
     box-shadow: 0 0px 10px rgba(0, 12, 143, 0.7);
 
-  }
+  } */
 
   .twitter-heading-container{
     width: 100%;
