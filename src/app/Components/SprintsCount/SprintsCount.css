@@ -1,0 +1,11 @@
+.sprintscount-widget {
+    border: 0.2px solid rgb(68, 225, 24);
+}
+
+.sprintscount-widget:hover {
+    box-shadow: 0 0px 10px rgba(68, 225, 24, 0.621);
+}
+
+.sprintscount-widget-value {
+    color: rgb(68, 225, 24);
+}

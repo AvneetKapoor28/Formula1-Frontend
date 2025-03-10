@@ -7,16 +7,16 @@ import collisionIcon from "../../../Assets/collision-icon.svg";
 const CollisionsCount = ({ collisions, isLoading }) => {
   return (
     <motion.div
-      className="collisions-widget"
+      className="cspg-widget collisions-widget"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="widget-header">
+      <div className="cspg-widget-header">
         <Image
           src={collisionIcon}
           alt="collision icon"
-          className="collision-icon"
+          className="cspg-widget-icon"
           width={40}
           height={40}
         />
@@ -26,7 +26,7 @@ const CollisionsCount = ({ collisions, isLoading }) => {
         <div>Loading...</div>
       ) : (
         <motion.div
-          className="collision-value"
+          className="cspg-widget-value collisions-widget-value"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -34,7 +34,7 @@ const CollisionsCount = ({ collisions, isLoading }) => {
           {collisions}
         </motion.div>
       )}
-      <div className="widget-footer">Total Collisions in Season</div>
+      <div className="cspg-widget-footer">Total Collisions in Season</div>
     </motion.div>
   );
 };

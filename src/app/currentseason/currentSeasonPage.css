@@ -8,7 +8,7 @@
     width: 100%;
 }
 
-/* Left Side (Standings & Collisions) */
+/* Left Side (Standings & cspg-widgets) */
 .left-column {
     display: flex;
     flex-direction: column;
@@ -22,20 +22,21 @@
     gap: 20px;
 }
 
-/* Ensure Standings & Collisions Are Properly Styled */
-.currentpage-standings-container, .collisions-container {
+/* Ensure Standings & cspg-widgets Are Properly Styled */
+.currentpage-standings-container, .cspg-widgets-container {
     width: 100%;
     /* background: #1e1e1e; */
     border: 1px solid #333;
-
     padding: 16px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
 }
 
-.collisions-container{
+.cspg-widgets-container{
     background: #1e1e1e;
+    display: flex;
+    gap: 20px;
 
 }
 /* Twitter & YouTube Feed Styling */
@@ -54,7 +55,7 @@
     justify-content: center;
 }
 
-.twitterfeed-container:hover, .youtube-container:hover,.currentpage-standings-container:hover, .collisions-container:hover{
+.twitterfeed-container:hover, .youtube-container:hover,.currentpage-standings-container:hover, .cspg-widgets-container:hover{
     box-shadow: 0 0px 10px rgba(0, 12, 143, 0.7);
     
 }

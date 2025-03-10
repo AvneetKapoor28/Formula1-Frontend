@@ -7,6 +7,8 @@ import CollisionsCount from '../Components/CollisionsCount/CollisionsCount';
 import axios from 'axios';
 import TwitterFeed from '../Components/TwitterFeed/TwitterFeed';
 import YoutubeFeed from '../Components/YotutubeFeed/YoutubeFeed';
+import CurrentSeasonRaceCount from '../Components/CurrentSeasonRaceCount/CurerentSeasonRaceCount';
+import SprintsCount from '../Components/SprintsCount/SprintsCount';
 
 const CurrentSeasonPageContent = () => {
   const [collisionsCount, setCollisionsCount] = useState(null);
@@ -35,8 +37,10 @@ const CurrentSeasonPageContent = () => {
         <div className="currentpage-standings-container">
           <StandingsHeading />
         </div>
-        <div className="collisions-container">
+        <div className="cspg-widgets-container">
           <CollisionsCount collisions={collisionsCount} isLoading={isCollisionCountLoading} />
+          <CurrentSeasonRaceCount /> 
+          <SprintsCount/>
         </div>
       </div>
 
