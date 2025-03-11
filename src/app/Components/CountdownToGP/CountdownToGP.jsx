@@ -69,7 +69,7 @@ const CountdownToGP = () => {
                         <div className="time-box"><span>{timeLeft.minutes}</span> Minutes</div>
                         <div className="time-box"><span>{timeLeft.seconds}</span> Seconds</div>
                     </div>
-                    <div className="countdown-footer"> Sprints This Season</div>
+                    <div className="countdown-footer"> Time to next Grand Prix</div>
                 </div>
             ) : (
                 <p className="no-data">No upcoming Grand Prix</p>

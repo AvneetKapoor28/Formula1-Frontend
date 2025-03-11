@@ -48,11 +48,11 @@ const CurrentSeasonPageContent = () => {
 
       {/* Right Side (35%) */}
       <div className="right-column">
-        <div className="twitterfeed-container">
-          <TwitterFeed />
-        </div>
         <div className="youtube-container">
           <YoutubeFeed />
+        </div>
+        <div className="twitterfeed-container">
+          <TwitterFeed />
         </div>
       </div>
     </div>
