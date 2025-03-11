@@ -3,7 +3,7 @@ import './SprintsCount.css';
 import axios from "axios";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import collisionIcon from "../../../Assets/collision-icon.svg";
+import sprintsIcon from "../../../Assets/sprints-count-icon.svg";
 
 const SprintsCount = () => {
   const [sprintsCount, setSprintsCount] = useState(null);
@@ -35,11 +35,11 @@ const SprintsCount = () => {
     >
       <div className="cspg-widget-header">
         <Image
-          src={collisionIcon}
+          src={sprintsIcon}
           alt="Sprints Count icon"
           className="cspg-widget-icon"
-          width={40}
-          height={40}
+          width={30}
+          height={30}
         />
         Sprints
       </div>

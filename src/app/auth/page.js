@@ -88,7 +88,7 @@ const Page = () => {
                                 placeholder="Enter Password" />
                         </div>
                         {/* Forgot Password */}
-                        <p className="auth-links" onClick={() => setAuthState("forgotPassword")}>Forgot Password?</p>
+                        {/* <p className="auth-links" onClick={() => setAuthState("forgotPassword")}>Forgot Password?</p> */}
                         <button type="submit">Sign Up</button>
                     </form>
                     <p className="auth-links" onClick={() => setAuthState("login")}>
@@ -121,7 +121,7 @@ const Page = () => {
                                 placeholder="Enter Password" />
                         </div>
                         {/* Forgot Password */}
-                        <p className="auth-links" onClick={() => setAuthState("forgotPassword")}>Forgot Password?</p>
+                        {/* <p className="auth-links" onClick={() => setAuthState("forgotPassword")}>Forgot Password?</p> */}
                         <button type="submit">Login</button>
                     </form>
                     <p className="auth-links" onClick={() => setAuthState("signup")}>

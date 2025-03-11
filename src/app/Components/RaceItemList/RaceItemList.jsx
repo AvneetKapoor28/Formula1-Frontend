@@ -54,7 +54,7 @@ const RaceItemList = ({ setIsPopupOpen }) => {
           </span>
         </div>
         <div className="race-items-wrapper">
-          <button className="scroll-button left" onClick={() => scroll(-1)}>
+          <button className="scroll-button left-button" onClick={() => scroll(-1)}>
             <Image src={leftArrow} className="left-arrow-img" alt="right arrow" width={40} />
           </button>
           <div className="race-items-container" id="raceScroll">
@@ -79,7 +79,7 @@ const RaceItemList = ({ setIsPopupOpen }) => {
               <p>No Data Available</p>
             )}
           </div>
-          <button className="scroll-button right" onClick={() => scroll(1)}>
+          <button className="scroll-button right-button" onClick={() => scroll(1)}>
             <Image src={rightArrow} alt="right arrow" className="right-arrow-img" width={40} />
           </button>
         </div>

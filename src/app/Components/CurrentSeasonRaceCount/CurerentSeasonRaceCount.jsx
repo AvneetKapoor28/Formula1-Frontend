@@ -3,7 +3,7 @@ import "./CurrentSeasonRaceCount.css";
 import axios from "axios";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import collisionIcon from "../../../Assets/collision-icon.svg";
+import GPCountIcon from "../../../Assets/GP-count-icon.svg";
 
 const CurrentSeasonRaceCount = () => {
   const [raceCount, setRaceCount] = useState(null);
@@ -35,11 +35,11 @@ const CurrentSeasonRaceCount = () => {
     >
       <div className="cspg-widget-header">
         <Image
-          src={collisionIcon}
+          src={GPCountIcon}
           alt="Race Count icon"
           className="cspg-widget-icon"
-          width={40}
-          height={40}
+          width={30}
+          height={30}
         />
         Grand Prixs
       </div>

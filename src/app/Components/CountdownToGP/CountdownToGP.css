@@ -15,16 +15,17 @@
     box-shadow: 0 0px 10px rgba(255, 0, 208, 0.666);
 }
 
-/* Title Styling */
-.countdown-title {
+.countdown-header{
     font-size: 1.5rem;
   font-weight: 500;
+  text-transform: uppercase;
   opacity: 0.8;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
+
 
 /* Timer Layout */
 .countdown-timer {

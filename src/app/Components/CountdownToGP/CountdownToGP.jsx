@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import axios from 'axios';
 import "./CountdownToGP.css";
+import Image from 'next/image';
+import countdownIcon from "../../../Assets/countdown-icon.svg";
+
 
 const CountdownToGP = () => {
     const [targetDate, setTargetDate] = useState(null);
@@ -60,9 +63,12 @@ const CountdownToGP = () => {
                 <p className="loading-text">Loading...</p>
             ) : targetDate && timeLeft ? (
                 <div>
+                    <div className='countdown-header'>
+                    {/* <Image src={countdownIcon} className='cspg-widget-icon' alt="countdown Icon" width={40} height={40} /> */}
                     <h3 className="countdown-title">
                         {targetDate.raceName}
                     </h3>
+                    </div>
                     <div className="countdown-timer">
                         <div className="time-box"><span>{timeLeft.days}</span> Days</div>
                         <div className="time-box"><span>{timeLeft.hours}</span> Hours</div>

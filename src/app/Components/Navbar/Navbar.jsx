@@ -22,7 +22,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="links">
-        <p
+        {/* <p
           onClick={() => setNavSelection("LiveRaceData")}
           className={navSelection === "LiveRaceData" ? "selected" : ""}
         >
@@ -31,7 +31,7 @@ const Navbar = () => {
               Live Race Data
             </Link>
           </span>
-        </p>
+        </p> */}
         <p
           onClick={() => setNavSelection("CurrentSeason")}
           className={navSelection === "CurrentSeason" ? "selected" : ""}

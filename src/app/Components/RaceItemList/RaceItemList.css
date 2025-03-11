@@ -46,15 +46,15 @@
   opacity: 1;
 }
 
-.left {
+.left-button {
   /* left: -50px; */
-  z-index: 2000;
+  /* z-index: 2000; */
   color: white;
 }
 
-.right {
+.right-button {
   right: -50px;
-  z-index: 2000;
+  /* z-index: 2000; */
   color: white;
 }
 
