@@ -37,6 +37,8 @@
     background: #1e1e1e;
     display: flex;
     gap: 20px;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
 
 }
 /* Twitter & YouTube Feed Styling */

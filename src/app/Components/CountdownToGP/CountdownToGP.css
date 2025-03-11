@@ -1,0 +1,56 @@
+/* Countdown Widget */
+.countdown-widget {
+    background-color: var(--background);
+    border-radius: 12px;
+    padding: 20px;
+    width: 45%;
+    height: fit-content;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 0.2px solid rgb(255, 0, 208);
+;
+
+}
+.countdown-widget:hover {
+    box-shadow: 0 0px 10px rgba(255, 0, 208, 0.666);
+}
+
+/* Title Styling */
+.countdown-title {
+    font-size: 1.5rem;
+  font-weight: 500;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Timer Layout */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+
+/* Time Number */
+.time-box span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: rgba(255, 0, 208, 0.88)
+}
+
+.countdown-footer {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+
+/* Loading & No Data States */
+.loading-text, .no-data {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    margin-top: 10px;
+}

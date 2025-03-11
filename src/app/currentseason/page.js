@@ -9,6 +9,7 @@ import TwitterFeed from '../Components/TwitterFeed/TwitterFeed';
 import YoutubeFeed from '../Components/YotutubeFeed/YoutubeFeed';
 import CurrentSeasonRaceCount from '../Components/CurrentSeasonRaceCount/CurerentSeasonRaceCount';
 import SprintsCount from '../Components/SprintsCount/SprintsCount';
+import CountdownToGP from '../Components/CountdownToGP/CountdownToGP';
 
 const CurrentSeasonPageContent = () => {
   const [collisionsCount, setCollisionsCount] = useState(null);
@@ -41,6 +42,7 @@ const CurrentSeasonPageContent = () => {
           <CollisionsCount collisions={collisionsCount} isLoading={isCollisionCountLoading} />
           <CurrentSeasonRaceCount /> 
           <SprintsCount/>
+          <CountdownToGP/>
         </div>
       </div>
 
