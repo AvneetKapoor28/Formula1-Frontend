@@ -1,177 +1,248 @@
-
 /* Navbar container styling */
 .Navbar {
+    width: 100%;
+    position: relative;
+    border-bottom: rgba(255, 0, 0, 0.63) 0.5px solid;
+    font-weight: 500;
+  }
+  
+  .navbar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0em 1em 0em 3em;
-    /* padding-bottom: 1.2em; */
-    border-bottom: rgba(255, 0, 0, 0.63) 0.5px solid;
-    font-weight: 500;
-}
-
-.Navbar.no-bottom-border{
+    padding: 0.8em 1em 0.8em 3em;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .Navbar.no-bottom-border {
     border-bottom: none;
-}
-
-.website-logo img {
+  }
+  
+  .website-logo img {
     margin-left: 10px;
     width: 100px;
     transition: transform 0.3s ease;
     cursor: pointer;
-}
-
-.website-logo img:hover {
+  }
+  
+  .website-logo img:hover {
     transform: scale(1.1);
     cursor: pointer;
-}
-
-.links {
+  }
+  
+  .links {
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 1.4rem;
     gap: 2em;
-    margin-right: 2em;
-}
-
-.links p {
+    /* margin-right: 2em; */
+  }
+  
+  .links p {
     cursor: pointer;
     position: relative;
     transition: color 0.3s ease-in-out;
-}
-
-/* Hover effect for links */
-
-.links p:hover {
-    /* color: var(--selected-heading-color); */
+  }
+  
+  /* Hover effect for links */
+  .links p:hover {
     background: linear-gradient(90deg, red, blue, purple);
-    background-size: 300% 300%; /* For smooth gradient animation */
+    background-size: 300% 300%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientMove 3s infinite;
     cursor: pointer;
-    /* Change color on hover if desired */
-}
-
-/* Underline animation on hover */
-/* .links p::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, red, blue, purple);
-    background-size: 400% 150%;
-    transition: width 0.4s ease-in-out; 
-} */
-
-.links p:hover::after {
+  }
+  
+  .links p:hover::after {
     width: 100%;
     animation: gradientMove 2s infinite;
-}
-
-@keyframes gradientMove {
+  }
+  
+  @keyframes gradientMove {
     0% {
-        background-position: 0% 50%;
+      background-position: 0% 50%;
     }
     50% {
-        background-position: 100% 50%;
+      background-position: 100% 50%;
     }
     100% {
-        background-position: 0% 50%;
+      background-position: 0% 50%;
     }
-}
-
-.Navbar .links .selected {
+  }
+  
+  .Navbar .links .selected {
     background: linear-gradient(90deg, red, blue, purple);
-    background-size: 300% 300%; /* For smooth gradient animation */
+    background-size: 300% 300%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientMove 3s infinite;
-    /* Stay highlighted */
-}
-
-.Navbar .links .selected::after {
-    animation: gradientMove 0.5s infinite;
-    animation: underlineSlide 0.4s ease forwards;
-    /* Keep underline */
-}
-
-
-.spanforlink {
+  }
+  
+  .spanforlink {
     text-decoration: none;
     color: inherit;
-}
-
-.Navbar .links .link {
+  }
+  
+  .Navbar .links .link {
     text-decoration: none;
-    /* Remove underline */
     color: inherit;
-    /* Set the desired default color */
-}
-
-.Navbar .links .link:hover {
+  }
+  
+  .Navbar .links .link:hover {
     color: var(--selected-heading-color);
-    /* Change color on hover if desired */
-}
-
-/* Keep the selected styles */
-.Navbar .links .selected {
-    color: var(--selected-heading-color);
-    /* Highlight color when selected */
-    text-decoration: none;
-    /* Ensure no underline when selected */
-}
-
-/* Responsive navbar layout */
-@media (max-width: 768px) {
-    .Navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .Navbar .links {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .Navbar .website-logo img {
-        width: 120px;
-    }
-}
-
-/* login button */
-/* Login button styles */
-/* Default Login Button */
-.login-button {
+  }
+  
+  /* Mobile hamburger menu */
+  .mobile-menu-button {
+    display: none;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  .hamburger {
+    width: 30px;
+    height: 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: rgba(255, 0, 0, 0.664);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  
+  /* login button */
+  .login-button {
     padding: 8px 20px;
-    border-radius: 12px; /* Rounded button */
+    border-radius: 12px;
     background: linear-gradient(90deg, red, blue, purple);
-    background-size: 300% 300%; 
+    background-size: 300% 300%;
     cursor: pointer;
     transition: all 0.4s ease-in-out;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.login-button::first-letter {
+  }
+  
+  .login-button::first-letter {
     text-transform: uppercase;
-}
-
-/* Gradient animation on hover */
-.login-button:hover {
+  }
+  
+  .login-button:hover {
     background: linear-gradient(90deg, red, blue, purple);
     background-size: 300% 300%;
     animation: gradientMove 3s infinite;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     color: white;
     cursor: pointer;
-}
+  }
+  
+  /* Large screens */
+  @media (min-width: 1200px) {
+    .links {
+      font-size: 1.5rem;
 
-
-
-
+    }
+  }
+  
+  /* Medium screens */
+  @media (max-width: 992px) {
+    .navbar-content {
+      padding: 0.8em 1em;
+    }
+    
+    .links {
+      font-size: 1.2rem;
+      gap: 1.5em;
+      margin-right: 1em;
+    }
+  }
+  
+  /* Small tablets and large phones */
+  @media (max-width: 768px) {
+    .navbar-content {
+      padding: 0.8em 1em;
+    }
+    
+    .mobile-menu-button {
+      display: block;
+    }
+    
+    .links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background-color: var(--background);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      padding: 1em;
+      gap: 1em;
+      margin: 0;
+      z-index: 10;
+      align-items: center;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      transform: translateY(-10px);
+    }
+    
+    .links.mobile-open {
+      min-height: 30vh;
+      overflow: scroll;
+      opacity: 1;
+      transform: translateY(0);
+      border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+    }
+    
+    .login-button-container {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+  }
+  
+  /* Small phones */
+  @media (max-width: 480px) {
+    .navbar-content {
+      padding: 0.6em 0.8em;
+    }
+    
+    .website-logo img {
+      width: 80px;
+    }
+    
+    .links p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* Extra small devices */
+  @media (max-width: 360px) {
+    .links p {
+      font-size: 1rem;
+    }
+  }

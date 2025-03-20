@@ -1,55 +1,408 @@
-.landing{
+.landing {
     height: 100vh;
     width: 100%;
-    position:absolute;
-    top: 0px;
+    position: absolute;
+    top: 0;
     display: flex;
     z-index: -1;
-}
-
-.left-container{
-    /* background-color: red; */
-    flex: 6;
+    overflow: hidden;
+  }
+  
+  .landing-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 20px;
+    height: 100vh;
+  }
+  
+  .left-container {
+    flex: 1;
     display: flex;
     align-items: center;
-    padding: 15px;
-}
-.top-line{
+    justify-content: flex-start;
+    padding: 0 15px;
+    min-width: 60%;
+  }
+  
+  .top-line {
     margin-left: 15px;
-}
-.middle-line{
-    /* color: rgb(233, 18, 18); */
-    /* font-style: italic; */
+    font-size: 0.6em;
+    white-space: nowrap;
+  }
+  
+  .middle-line {
     font-size: 1.6em;
     font-weight: 700;
     background: linear-gradient(90deg, red, blue, purple);
-    background-size: 300% 300%; /* For smooth gradient animation */
+    background-size: 300% 300%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientMove 3s infinite;
-}
-@keyframes gradientMove {
+    white-space: nowrap;
+  }
+  
+  .description-line {
+    font-size: 0.3em;
+    margin-left: 15px;
+    margin-top: 15px;
+    opacity: 0.8;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+  
+  .primary-button, .secondary-button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 0.25em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border: none;
+    outline: none;
+  }
+  
+  .primary-button {
+    background: linear-gradient(90deg, red, blue, purple);
+    background-size: 300% 300%;
+    color: white;
+    animation: gradientMove 3s infinite;
+  }
+  
+  .secondary-button {
+    background: transparent;
+    border: 2px solid rgba(255, 0, 0, 0.63);
+    color: #333;
+  }
+  
+  .primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .secondary-button:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+    transform: translateY(-3px);
+  }
+  
+  /* .right-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    position: relative;
+  } */
+  
+  .stats-card {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, red, blue, purple);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+  
+  .feature-highlight {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    border-left: 4px solid red;
+  }
+  
+  .highlight-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, red, blue, purple);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite;
+  }
+  
+  .highlight-description {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  .decorative-element {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+    filter: blur(60px);
+    z-index: -1;
+  }
+  
+  .top-right {
+    top: 10%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(90deg, blue, purple);
+  }
+  
+  .bottom-left {
+    bottom: 10%;
+    left: 10%;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(90deg, red, blue);
+  }
+  
+  @keyframes gradientMove {
     0% {
-        background-position: 0% 50%;
+      background-position: 0% 50%;
     }
     50% {
-        background-position: 100% 50%;
+      background-position: 100% 50%;
     }
     100% {
-        background-position: 0% 50%;
+      background-position: 0% 50%;
     }
-}
-.lines-container{
+  }
+  
+  .lines-container {
     font-size: 5em;
     font-weight: 500;
-}
-
-.right-container{
-    width: 40%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
+  }
+  
+  /* For background image handling */
+  body.landing-page {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+  
+  /* Large desktop screens */
+  @media (min-width: 1440px) {
+    .lines-container {
+      font-size: 6em;
+    }
+  }
+  
+  /* Standard desktop screens */
+  @media (max-width: 1200px) {
+    .lines-container {
+      font-size: 4.5em;
+    }
+    
+    .right-container {
+      padding-right: 20px;
+    }
+    
+    .stats-card, .feature-highlight {
+      max-width: 350px;
+    }
+  }
+  
+  /* Small desktop and tablets */
+  @media (max-width: 992px) {
+    .landing-content {
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .lines-container {
+      font-size: 3.5em;
+    }
+    
+    .left-container {
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        text-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      /* background-color: blue; */
+    }
+    .left-container span{
+        min-width: 100%;
+        font-size: 0.8em;
+        margin-left: 5px;
+        text-wrap: wrap;
+    }
+    
+    .right-container {
+      align-items: center;
+      padding-left: 30px;
+    }
+    
+    .stats-card, .feature-highlight {
+      max-width: 400px;
+    }
+  }
+  
+  /* Tablets and large phones */
+  @media (max-width: 768px) {
+    .lines-container {
+      font-size: 3em;
+    }
+    
+    .landing-content {
+      /* padding: 0 15px; */
+    }
+    
+    .left-container {
+      padding-left: 0;
+    }
+    
+    .right-container {
+      padding-left: 15px;
+      /* background-color: blueviolet; */
+    }
+    
+    .stats-card, .feature-highlight {
+      max-width: 90%;
+    }
+  }
+  
+  /* Medium phones */
+  @media (max-width: 576px) {
+    .landing-content {
+      padding: 0 10px;
+    }
+    
+    .lines-container {
+      font-size: 2.5em;
+    }
+    
+    .top-line, .description-line {
+      margin-left: 10px;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .primary-button, .secondary-button {
+      width: 100%;
+      padding: 10px 20px;
+      font-size: 0.35em;
+    }
+    
+    .stats-card {
+      padding: 15px;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+    }
+    
+    .stat-label {
+      font-size: 0.8rem;
+    }
+    
+    .feature-highlight {
+      padding: 15px;
+    }
+    
+    .decorative-element {
+      opacity: 0.2;
+      filter: blur(40px);
+    }
+  }
+  
+  /* Small phones */
+  @media (max-width: 420px) {
+    .lines-container {
+      font-size: 2em;
+    }
+    
+    .top-line {
+      font-size: 0.7em;
+    }
+    
+    .description-line {
+      font-size: 0.4em;
+    }
+    
+    .primary-button, .secondary-button {
+      font-size: 0.4em;
+    }
+    
+    .stats-card, .feature-highlight {
+      max-width: 100%;
+    }
+  }
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    .lines-container {
+      font-size: 1.8em;
+    }
+    
+    .stat-number {
+      font-size: 1.7rem;
+    }
+    
+    .stat-label {
+      font-size: 0.7rem;
+    }
+  }
+  
+  /* Height-based adjustments for shorter screens */
+  @media (max-height: 700px) {
+    .landing-content {
+      padding-top: 80px;
+    }
+    
+    .stats-card {
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media (max-height: 600px) {
+    .stats-card {
+      padding: 10px;
+    }
+    
+    .feature-highlight {
+      padding: 10px;
+    }
+  }
