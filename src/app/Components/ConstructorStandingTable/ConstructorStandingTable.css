@@ -78,4 +78,11 @@
     .constructor-standing-item>div {
         margin-bottom: 0.5em;
     }
+    .constructor-standing-header {
+        grid-template-columns: 0.4fr 1fr 1fr; /* Only Position, Constructor, and Points */
+    }
+
+    .wins-heading-constructor-table {
+        display: none;
+    }
 }

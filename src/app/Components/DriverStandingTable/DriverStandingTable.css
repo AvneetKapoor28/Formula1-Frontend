@@ -72,14 +72,49 @@
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
+    .driver-standing-header {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        padding: 0.8em;
+    }
+
+    .driver-standing-header-item {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    /* Hide unnecessary columns on small screens */
+    .number-heading,
+    .constructor-heading-driver-table,
+    .wins-heading-driver-table {
+        display: none;
+    }
+
+    /* Adjust positioning for remaining items */
+    .driver-heading {
+        text-align: center;
+        padding-left: 0;
+        position: static;
+    }
+
+    .points-heading-driver-table {
+        position: static;
+    }
+
     .driver-standing-item {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
         padding: 1em;
-        align-items: start;
+        align-items: center;
     }
 
     .driver-standing-item>div {
-        margin-bottom: 0.5em;
+        text-align: center;
+    }
+
+    .standings-container {
+        max-height: 500px;
+        overflow-y: auto;
     }
 }
+
