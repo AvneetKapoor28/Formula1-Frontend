@@ -15,12 +15,10 @@ const DriverStandingItem = (props) => {
         onClick={toggleCallout}
       >
         <div className={styles.position}>{props.Position}</div>
-        <div className={styles.name}>{props.Name}</div>
-        <div className={styles.points}>{props.Points}</div>
-        
-        {/* These will be hidden on mobile and shown on desktop */}
         <div className={styles.driverNumber}>{props.Number}</div>
+        <div className={styles.name}>{props.Name}</div>
         <div className={styles.constructorName}>{props.constructorName}</div>
+        <div className={styles.points}>{props.Points}</div>
         <div className={styles.wins}>{props.Wins}</div>
         
         {/* Mobile-only callout that appears on click */}

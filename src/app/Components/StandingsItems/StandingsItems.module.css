@@ -134,6 +134,9 @@
     .wins {
         display: block;
     }
+    .driverNumber{
+        text-align: center;
+    }
     
     .calloutContainer {
         display: none;
