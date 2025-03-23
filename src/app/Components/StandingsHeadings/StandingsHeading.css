@@ -68,3 +68,10 @@
     -webkit-text-fill-color: transparent;
     animation: gradientMove 3s infinite;
 }
+
+@media (max-width: 768px) {
+    .driversOrConstructors {
+        gap: 5px;
+        font-size: 1rem;
+    }
+}

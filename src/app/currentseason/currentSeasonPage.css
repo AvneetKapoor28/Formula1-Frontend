@@ -68,3 +68,13 @@
         grid-template-columns: 100%; /* Stack both sections */
     }
 }
+
+@media (max-width: 768px){
+    .cspg-widgets-container{
+        flex-direction: column;
+        width: 100%;
+    }
+    .cspg-widget{
+        width: 100%;
+    }
+}

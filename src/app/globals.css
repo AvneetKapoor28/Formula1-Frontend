@@ -103,3 +103,11 @@ body {
     text-wrap: balance;
   }
 }
+
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 5px;
+  }
+}
