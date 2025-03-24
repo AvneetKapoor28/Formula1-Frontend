@@ -21,10 +21,11 @@ const PastSeasonsPageContent = () => {
       <div className="past-seasons-grid">
         {/* Top Section - Standings and Counts */}
         <div className=" outer-standings-container">
+        <DropdownYear />
+
           <StandingsHeading />
         </div>
         <div className="counts-container">
-          <DropdownYear />
           <div className="count-widgets">
             <DriverCount />
             <ConstructorCount />
