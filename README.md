@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏎️ Formula 1 Dashboard
 
-## Getting Started
+A comprehensive Formula 1 Dashboard providing real-time and historical insights into F1 races, driver and constructor standings, race analytics, and more.  
+**Live at** 👉 [formula1dashboard.xyz](https://www.formula1dashboard.xyz)
 
-First, run the development server:
+<p align="center">
+  <img src="https://img.shields.io/badge/Backend-Node.js-blue?logo=node.js" />
+  <img src="https://img.shields.io/badge/Backend-FastAPI-green?logo=fastapi" />
+  <img src="https://img.shields.io/badge/Frontend-Next.js-black?logo=next.js" />
+  <img src="https://img.shields.io/badge/Database-MongoDB-brightgreen?logo=mongodb" />
+  <img src="https://img.shields.io/badge/Auth-JWT-orange?logo=jsonwebtokens" />
+  <img src="https://img.shields.io/badge/Data%20Source-Ergast%20API%20%7C%20FastF1-yellow?logo=data" />
+  <img src="https://img.shields.io/badge/Fronted%20Deployed%20on-Vercel-black?logo=vercel" />
+  <img src="https://img.shields.io/badge/Backend%20Hosted%20on-AWS%20EC2-FF9900?logo=amazonaws&logoColor=white" />
+</p>
 
+---
+
+## 🌐 Project Overview
+
+The Formula 1 Dashboard is a data-rich, interactive platform built for F1 fans and analysts to explore:
+
+- **Current Season Stats**: Live driver and constructor standings, total Grand Prix and Sprint Races, countdown to the next race, and live news from X (Twitter) and YouTube.
+- **Historical Data**: Explore F1 history from **1950 onwards**. View past seasons' standings, race stats, and detailed race-specific insights.
+- **Race Analytics**: Advanced race visualizations like team pace comparison, tyre strategies, position changes, and more.
+
+---
+
+## 🚀 Features
+
+### 🔴 Landing Page
+- Navigation to current and past season dashboards.
+
+### 📅 Current Season
+- **Driver & Constructor Standings** – Auto-updated.
+- **Total Grand Prix & Sprint Races** this season.
+- **Countdown Timer** to the next Grand Prix.
+- **Live News** from X (Twitter) and YouTube.
+
+### 📜 Past Seasons
+- Select any year from **1950 onwards**.
+- View:
+  - Final Driver & Constructor Standings.
+  - Total Drivers, Constructors, and Races that year.
+  - List of all Grand Prix. User may click on any one GP for more information.
+
+#### 🏁 Race View Tab
+- **Race Results Table** – click on any driver for a detailed performance view:
+  - Avg Speed  
+  - Fastest Lap Time & Rank  
+  - Time Taken  
+  - Points Scored  
+  - Starting Grid Position  
+  - Involved Incidents
+
+#### 📊 Analytics Tab
+Includes 5 interactive visualizations:
+1. Fastest Lap Gear Shifts  
+2. Team Pace Comparison  
+3. Tyre Strategies  
+4. Driver's Lap Times by Tyre Compound  
+5. Position Changes During the Race
+
+### 👤 Authentication
+- **JWT Auth**
+- **User Signup & Login**
+
+---
+
+## 🧰 Tech Stack
+
+| Layer        | Tech                                                                 |
+|--------------|----------------------------------------------------------------------|
+| Frontend     | React, NextJS Framework (Deployed on **Vercel**)               |
+| Backend      | Node.js with Express.js, FastAPI (Deployed on **AWS EC2 Instance**)          |
+| Database     | MongoDB (with **Mongoose**)                                          |
+| Data Sources | [Ergast API](https://ergast.com/mrd/) & [FastF1 API](https://pypi.org/project/fastf1/) |
+| Visualisation| Python (NumPy, Matplotlib)                                           |
+| Auth         | JWT                                                                  |
+
+---
+
+## 📦 Repositories
+
+- 🔗 **Node.js Backend**: [Formula-1-Dashboard Backend](https://github.com/AvneetKapoor28/Formula-1-Dashboard)  
+- 🔗 **FastAPI Analytics Backend**: [Formula1 Analytics Backend](https://github.com/AvneetKapoor28/formula1-analytics-backend)
+
+---
+
+## 🌍 Live Project
+
+> 🖥️ Visit: [https://www.formula1dashboard.xyz](https://www.formula1dashboard.xyz)
+
+---
+
+## 📸 Screenshots
+
+<details>
+<summary>Click to Expand</summary>
+
+_Coming Soon – Add screenshots of Landing Page, Current Season Page, Past Season Page, Race Analytics_
+
+</details>
+
+---
+
+## 🔒 Authentication
+
+JWT-based authentication ensures secure access. Signup/Login enables personalized experience and possibly feature extensions in the future.
+
+---
+
+## 📈 Data Visualization Samples
+
+- Matplotlib graphs rendered from race telemetry.
+- FastF1 provides real-time gear shifts, lap time, and car telemetry.
+- Cleanly visualized comparisons of team and driver performance.
+
+---
+
+## ⚙️ Installation
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+git clone https://github.com/AvneetKapoor28/Formula-1-Dashboard.git
