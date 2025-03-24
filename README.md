@@ -106,16 +106,6 @@ Includes 5 interactive visualizations:
 
 ---
 
-#### 🔹 Signup Page  
-![Signup Page](https://www.formula1dashboard.xyz/screenshots/signup-page-ss.png)
-
----
-
-#### 🔹 Login Page  
-![Login Page](https://www.formula1dashboard.xyz/screenshots/login-page-ss.png)
-
----
-
 ### 🎥 Demo Videos
 
 #### 🔸 Current Season Page Demo  
@@ -131,10 +121,33 @@ Includes 5 interactive visualizations:
 #### 🔸 Data Visualization Demo  
 [![Watch Data Visualization Demo](https://img.youtube.com/vi/YiZM-1QJ5yk/0.jpg)](https://youtu.be/YiZM-1QJ5yk)
 
-</details>
+---
+
+#### 🔹 Signup Page  
+![Signup Page](https://www.formula1dashboard.xyz/screenshots/signup-page-ss.png)
 
 ---
 
+</details>
+
+---
+## 📱 Mobile Responsive
+
+The Formula 1 Dashboard is fully **responsive** and optimized for all devices, including:
+
+- 📱 Smartphones
+- 💻 Laptops
+- 🖥️ Desktops
+- 📲 Tablets
+
+<details>
+  <summary>Click to view screenshots</summary>
+  
+</details>
+
+All pages — from the landing page to the detailed analytics view — adapt seamlessly to various screen sizes to ensure a smooth and engaging experience for users on the go.
+
+---
 ## 🔒 Authentication
 
 JWT-based authentication ensures secure access. Signup/Login enables personalized experience and possibly feature extensions in the future.
