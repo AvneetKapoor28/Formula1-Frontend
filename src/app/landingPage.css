@@ -80,7 +80,6 @@
   .secondary-button {
     background: transparent;
     border: 2px solid rgba(255, 0, 0, 0.63);
-    color: #333;
   }
   
   .primary-button:hover {
