@@ -113,8 +113,13 @@
     }
 
     .standings-container {
-        max-height: 500px;
+        max-height: 400px !important;
         overflow-y: auto;
     }
 }
 
+@media (max-width:768px){
+    .heading-and-items{
+        min-width: 350px;
+    }
+}

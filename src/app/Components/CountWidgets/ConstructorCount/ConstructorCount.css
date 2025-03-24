@@ -66,3 +66,9 @@
     transform: translateY(-3px);
     box-shadow: 0 12px 24px rgba(0, 12, 143, 0.446);
 }
+
+@media(max-width: 768px) {
+    .constructor-widget{
+        scale: 0.8;
+    }
+}

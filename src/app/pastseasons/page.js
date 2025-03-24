@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./PastSeasonsPage.css";
 import StandingsHeading from "../Components/StandingsHeadings/StandingsHeading";
 import DropdownYear from "../Components/DropdownYear/DropdownYear";
@@ -14,32 +14,43 @@ import RaceAnalytics from "../Components/RaceAnalytics/RaceAnalytics";
 import RaceAnalyticsDisplay from "../Components/RaceAnalyticsDisplay/RaceAnalyticsDisplay";
 
 const PastSeasonsPageContent = () => {
-  const { displayRaceDetails, setDisplayRaceDetails, selectedRound, displayRaceAnalyticsOptions, displayRaceAnalyticsChoice, setDisplayRaceAnalyticsChoice } = useContext(PastSeasonsPageContext);
+  const { displayRaceDetails, selectedRound, displayRaceAnalyticsOptions, displayRaceAnalyticsChoice } = useContext(PastSeasonsPageContext);
+
   return (
-    <div>
-      <div className="standingsheading-selectyear">
-        <div>
+    <>
+      <div className="past-seasons-grid">
+        {/* Top Section - Standings and Counts */}
+        <div className=" outer-standings-container">
           <StandingsHeading />
         </div>
-
-        <div className="right-side">
+        <div className="counts-container">
           <DropdownYear />
-          <div className="counts-container">
+          <div className="count-widgets">
             <DriverCount />
             <ConstructorCount />
             <SeasonRaceCount />
           </div>
         </div>
-      </div>
 
-      <div>
-        <RaceItemList />
       </div>
-      <ResultsOrAnalytics />
-      {displayRaceDetails && selectedRound ? <RaceDetails /> : displayRaceAnalyticsOptions && selectedRound ? <RaceAnalytics /> : <div className="please-choose-round">Please Choose a Round</div>}
-      {displayRaceAnalyticsChoice !== null && !displayRaceDetails ? <RaceAnalyticsDisplay/> : null}
+        {/* Full-width Race Item List */}
+        <div className="race-item-list">
+          <RaceItemList />
+        </div>
 
-    </div>
+        {/* Results or Analytics */}
+        <div className="results-analytics">
+          <ResultsOrAnalytics />
+          {displayRaceDetails && selectedRound ? (
+            <RaceDetails />
+          ) : displayRaceAnalyticsOptions && selectedRound ? (
+            <RaceAnalytics />
+          ) : (
+            <div className="please-choose-round">Please Choose a Round</div>
+          )}
+          {displayRaceAnalyticsChoice !== null && !displayRaceDetails ? <RaceAnalyticsDisplay /> : null}
+        </div>
+    </>
   );
 };
 
@@ -48,7 +59,7 @@ const PastSeasonsPage = () => {
     <PastSeasonsPageContextProvider>
       <PastSeasonsPageContent />
     </PastSeasonsPageContextProvider>
-  )
-}
+  );
+};
 
 export default PastSeasonsPage;
