@@ -142,6 +142,21 @@ The Formula 1 Dashboard is fully **responsive** and optimized for all devices, i
 
 <details>
   <summary>Click to view screenshots</summary>
+  <div align="center">
+  <img src="https://www.formula1dashboard.xyz/screenshots/mobile1.jpeg" width="30%" style="margin:10px;" />
+  <img src="https://www.formula1dashboard.xyz/screenshots/mobile2.jpeg" width="30%" style="margin:10px;" />
+  <img src="https://www.formula1dashboard.xyz/screenshots/mobile3.jpeg" width="30%" style="margin:10px;" />
+  <br />
+  <img src="https://www.formula1dashboard.xyz/screenshots/mobile4.jpeg" width="30%" style="margin:10px;" />
+  <img src="https://www.formula1dashboard.xyz/screenshots/mobile5.jpeg" width="30%" style="margin:10px;" />
+  <img src="https://www.formula1dashboard.xyz/screenshots/mobile6.jpeg" width="30%" style="margin:10px;" />
+  <br />
+  <img src="https://www.formula1dashboard.xyz/screenshots/mobile7.jpeg" width="30%" style="margin:10px;" />
+  <img src="https://www.formula1dashboard.xyz/screenshots/mobile8.jpeg" width="30%" style="margin:10px;" />
+  <img src="https://www.formula1dashboard.xyz/screenshots/mobile9.jpeg" width="30%" style="margin:10px;" />
+  <br />
+  <img src="https://www.formula1dashboard.xyz/screenshots/mobile10.jpeg" width="30%" style="margin:10px;" />
+</div>
   
 </details>
 
