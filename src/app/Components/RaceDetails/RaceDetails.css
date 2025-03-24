@@ -50,9 +50,13 @@
 }
 
 @media(max-width: 768px){
+  .outermost-container{
+    width: 100vw !important;
+    overflow: auto;
+  }
   .race-standings-container{
     width: 95%;
     min-width: 425px;
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 }
