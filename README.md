@@ -94,12 +94,42 @@ Includes 5 interactive visualizations:
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots & Demo Videos
 
 <details>
-<summary>Click to Expand</summary>
+<summary>Click to expand</summary>
 
-_Coming Soon – Add screenshots of Landing Page, Current Season Page, Past Season Page, Race Analytics_
+### 🖼️ Screenshots
+
+#### 🔹 Landing Page  
+![Landing Page](https://www.formula1dashboard.xyz/screenshots/landing-page-ss.png)
+
+---
+
+#### 🔹 Signup Page  
+![Signup Page](https://www.formula1dashboard.xyz/screenshots/signup-page-ss.png)
+
+---
+
+#### 🔹 Login Page  
+![Login Page](https://www.formula1dashboard.xyz/screenshots/login-page-ss.png)
+
+---
+
+### 🎥 Demo Videos
+
+#### 🔸 Current Season Page Demo  
+[![Watch Current Season Demo](https://img.youtube.com/vi/bZ-nDWxcQrM/0.jpg)](https://youtu.be/bZ-nDWxcQrM)
+
+---
+
+#### 🔸 Past Seasons Page Demo  
+[![Watch Past Seasons Demo](https://img.youtube.com/vi/BW5IZVNdKCY/0.jpg)](https://youtu.be/BW5IZVNdKCY)
+
+---
+
+#### 🔸 Data Visualization Demo  
+[![Watch Data Visualization Demo](https://img.youtube.com/vi/YiZM-1QJ5yk/0.jpg)](https://youtu.be/YiZM-1QJ5yk)
 
 </details>
 
