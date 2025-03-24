@@ -121,5 +121,8 @@
 @media (max-width:768px){
     .heading-and-items{
         min-width: 350px;
+        position: relative;
+        right: 20px;
+        scale: 0.9;
     }
 }
