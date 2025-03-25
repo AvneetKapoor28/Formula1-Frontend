@@ -177,8 +177,30 @@ JWT-based authentication ensures secure access. Signup/Login enables personalize
 
 ---
 
-## ⚙️ Installation
+## 🤝 Contributing
 
-1. **Clone the repository**
+Contributions are welcome! Here's how to get started:
+
+1. Fork the repository
+2. Create your feature branch
+
 ```bash
-git clone https://github.com/AvneetKapoor28/Formula-1-Dashboard.git
+   git checkout -b feature/YourFeature
+```
+3.Commit your changes
+```bash
+  git commit -m "Add your message"
+```
+4.Push to the branch
+```bash
+  git push origin feature/YourFeature
+```
+5.Open a Pull Request
+
+---
+## ⭐ Show Your Support
+
+If you found this project useful, **leave a star** ⭐ on the repository to show your appreciation!  
+
+Your support motivates me to improve and add more features! 🚀  
+
